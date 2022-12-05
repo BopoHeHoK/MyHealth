@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Моё здоровье</string>
+    <string name="home_fragment">Главная</string>
+    <string name="calc_fragment">Расчёт</string>
+    <string name="diary_fragment">Дневник</string>
+    <string name="article_fragment">Статьи</string>
+    <string name="schedule_fragment">Режим</string>
+</resources>
