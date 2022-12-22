@@ -21,6 +21,7 @@
             android:layout_marginTop="48dp"
             android:background="@drawable/bg_white"
             android:elevation="2dp"
+            android:paddingBottom="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -29,42 +30,38 @@
                 android:id="@+id/water"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="Напоминание: вода"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btnWater"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnWater"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginBottom="24dp"
                 android:background="@drawable/ic_pencil"
                 android:elevation="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/water" />
+                app:layout_constraintTop_toBottomOf="@+id/water" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
             android:id="@+id/imageWater"
-            android:layout_width="0dp"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginBottom="-48dp"
-            android:background="@color/blue_cyan"
+            android:background="@color/blue"
+            android:elevation="4dp"
             android:padding="8dp"
             android:src="@drawable/ic_water"
-            android:elevation="4dp"
             app:layout_constraintBottom_toTopOf="@+id/waterLayout"
-            app:layout_constraintEnd_toEndOf="@+id/waterLayout"
             app:layout_constraintStart_toStartOf="@+id/waterLayout" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -74,6 +71,7 @@
             android:layout_marginTop="48dp"
             android:background="@drawable/bg_white"
             android:elevation="2dp"
+            android:paddingBottom="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/waterLayout">
@@ -82,42 +80,38 @@
                 android:id="@+id/food"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="Напоминание: еда"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btnFood"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnFood"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginBottom="24dp"
                 android:background="@drawable/ic_pencil"
                 android:elevation="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/food" />
+                app:layout_constraintTop_toBottomOf="@+id/food" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
             android:id="@+id/imageFood"
-            android:layout_width="0dp"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginBottom="-48dp"
-            android:background="@color/light_yellow"
+            android:background="@color/yellow_brown"
+            android:elevation="4dp"
             android:padding="8dp"
             android:src="@drawable/ic_food"
-            android:elevation="4dp"
             app:layout_constraintBottom_toTopOf="@+id/foodLayout"
-            app:layout_constraintEnd_toEndOf="@+id/foodLayout"
             app:layout_constraintStart_toStartOf="@+id/foodLayout" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -127,6 +121,7 @@
             android:layout_marginTop="48dp"
             android:background="@drawable/bg_white"
             android:elevation="2dp"
+            android:paddingBottom="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/foodLayout">
@@ -135,42 +130,38 @@
                 android:id="@+id/medicine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="Напоминание: лекарства"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btnMedicine"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnMedicine"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginBottom="24dp"
                 android:background="@drawable/ic_pencil"
                 android:elevation="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/medicine" />
+                app:layout_constraintTop_toBottomOf="@+id/medicine" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
             android:id="@+id/imageMedicine"
-            android:layout_width="0dp"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginBottom="-48dp"
-            android:background="@color/mantis"
+            android:background="@color/green"
+            android:elevation="4dp"
             android:padding="8dp"
             android:src="@drawable/ic_medicine"
-            android:elevation="4dp"
             app:layout_constraintBottom_toTopOf="@+id/medicineLayout"
-            app:layout_constraintEnd_toEndOf="@+id/medicineLayout"
             app:layout_constraintStart_toStartOf="@+id/medicineLayout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

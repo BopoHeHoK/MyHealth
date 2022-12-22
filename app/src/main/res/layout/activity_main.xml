@@ -34,9 +34,9 @@
                     android:id="@+id/fragmentToolBar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/purple"
                     android:fitsSystemWindows="true"
-                    app:layout_collapseMode="parallax"
-                    android:background="@color/yellow_brown">
+                    app:layout_collapseMode="parallax">
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

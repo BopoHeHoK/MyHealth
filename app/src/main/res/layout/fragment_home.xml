@@ -21,6 +21,7 @@
             android:layout_marginTop="48dp"
             android:background="@drawable/bg_white"
             android:elevation="2dp"
+            android:paddingBottom="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -29,42 +30,38 @@
                 android:id="@+id/dream"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="Ваш сон"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btnDream"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btnDream"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginBottom="24dp"
                 android:background="@drawable/ic_pencil"
                 android:elevation="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/dream" />
+                app:layout_constraintTop_toBottomOf="@+id/dream" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="0dp"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginBottom="-48dp"
-            android:background="@color/cyan"
+            android:background="@color/yellow_brown"
+            android:elevation="4dp"
             android:padding="8dp"
             android:src="@drawable/ic_dream"
-            android:elevation="4dp"
             app:layout_constraintBottom_toTopOf="@+id/dreamLayout"
-            app:layout_constraintEnd_toEndOf="@+id/dreamLayout"
             app:layout_constraintStart_toStartOf="@+id/dreamLayout" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -74,6 +71,7 @@
             android:layout_marginTop="48dp"
             android:background="@drawable/bg_white"
             android:elevation="2dp"
+            android:paddingBottom="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dreamLayout">
@@ -82,13 +80,12 @@
                 android:id="@+id/todayMedicine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="Сегодня"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btnSchedule"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -96,11 +93,9 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
                 android:text="нет данных"
-                app:layout_constraintBottom_toTopOf="@+id/btnSchedule"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/todayMedicine">
@@ -111,30 +106,28 @@
                 android:id="@+id/btnSchedule"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginBottom="24dp"
                 android:background="@drawable/ic_pencil"
+                android:elevation="4dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:elevation="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/homeSchedule" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
             android:id="@+id/imageMedicine"
-            android:layout_width="0dp"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginBottom="-48dp"
-            android:background="@color/pink"
+            android:background="@color/green"
+            android:elevation="4dp"
             android:padding="8dp"
             android:src="@drawable/ic_medicine"
-            android:elevation="4dp"
             app:layout_constraintBottom_toTopOf="@+id/todayMedicineLayout"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/todayMedicineLayout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
