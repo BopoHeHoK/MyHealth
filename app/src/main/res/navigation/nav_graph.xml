@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/rootFragment"
+        android:name="com.test.myhealth.app.presentation.screen.root.RootFragment"
+        android:label="fragment_root"
+        tools:layout="@layout/fragment_root" >
+        <action
+            android:id="@+id/action_rootFragment_to_biometricsFragment"
+            app:destination="@id/biometricsFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_userSetupFragment"
+            app:destination="@id/userSetupFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_getPremiumFragment"
+            app:destination="@id/getPremiumFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_statisticsFragment"
+            app:destination="@id/statisticsFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_editDreamFragment"
+            app:destination="@id/editDreamFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_editPhysicalFragment"
+            app:destination="@id/editPhysicalFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_editMentalFragment"
+            app:destination="@id/editMentalFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_editMedicineFragment"
+            app:destination="@id/editMedicineFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_singInFragment"
+            app:destination="@id/singInFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_singInFragment2"
+            app:destination="@id/singInFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_bmiFragment"
+            app:destination="@id/bmiFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_bmmFragment"
+            app:destination="@id/bmmFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_ibwFragment"
+            app:destination="@id/ibwFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_tbbFragment"
+            app:destination="@id/tbbFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_tbwFragment"
+            app:destination="@id/tbwFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_wthFragment"
+            app:destination="@id/wthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.test.myhealth.app.presentation.screen.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_rootFragment"
+            app:destination="@id/rootFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_singInFragment"
+            app:destination="@id/singInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.article.ArticleFragment"
+        android:label="fragment_articles"
+        tools:layout="@layout/fragment_articles" />
+    <fragment
+        android:id="@+id/calcFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.calc.CalcFragment"
+        android:label="fragment_calc"
+        tools:layout="@layout/fragment_calc" />
+    <fragment
+        android:id="@+id/scheduleFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.schedule.ScheduleFragment"
+        android:label="fragment_schedule"
+        tools:layout="@layout/fragment_schedule" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/biometricsFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.profile.menu.biometrics.BiometricsFragment"
+        android:label="fragment_biometrics"
+        tools:layout="@layout/fragment_biometrics" />
+    <fragment
+        android:id="@+id/getPremiumFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.profile.menu.get_premium.GetPremiumFragment"
+        android:label="fragment_get_premium"
+        tools:layout="@layout/fragment_get_premium" />
+    <fragment
+        android:id="@+id/userSetupFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.profile.menu.user_setup.UserSetupFragment"
+        android:label="fragment_user_setup"
+        tools:layout="@layout/fragment_user_setup" />
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.article.statistics.StatisticsFragment"
+        android:label="fragment_statistics"
+        tools:layout="@layout/fragment_statistics" />
+    <fragment
+        android:id="@+id/editDreamFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.main.edit_dream.EditDreamFragment"
+        android:label="fragment_edit_dream"
+        tools:layout="@layout/fragment_edit_dream" />
+    <fragment
+        android:id="@+id/editPhysicalFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.main.edit_physical.EditPhysicalFragment"
+        android:label="fragment_edit_physical"
+        tools:layout="@layout/fragment_edit_physical" />
+    <fragment
+        android:id="@+id/editMentalFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.main.edit_mental.EditMentalFragment"
+        android:label="fragment_edit_mental"
+        tools:layout="@layout/fragment_edit_mental" />
+    <fragment
+        android:id="@+id/editMedicineFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.schedule.edit_medicine.EditMedicineFragment"
+        android:label="fragment_edit_medicine"
+        tools:layout="@layout/fragment_edit_medicine" />
+    <fragment
+        android:id="@+id/singInFragment"
+        android:name="com.test.myhealth.app.presentation.screen.signin.SingInFragment"
+        android:label="fragment_sing_in"
+        tools:layout="@layout/fragment_sing_in" >
+        <action
+            android:id="@+id/action_singInFragment_to_singUpFragment"
+            app:destination="@id/singUpFragment" />
+        <action
+            android:id="@+id/action_singInFragment_to_splashFragment"
+            app:destination="@id/splashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singUpFragment"
+        android:name="com.test.myhealth.app.presentation.screen.signup.SingUpFragment"
+        android:label="fragment_sing_up"
+        tools:layout="@layout/fragment_sing_up" >
+        <action
+            android:id="@+id/action_singUpFragment_to_splashFragment"
+            app:destination="@id/splashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bmiFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.calc.body_mass_index.BmiFragment"
+        android:label="fragment_bmi"
+        tools:layout="@layout/fragment_bmi" />
+    <fragment
+        android:id="@+id/bmmFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.calc.body_muscle_mass.BmmFragment"
+        android:label="fragment_bmm"
+        tools:layout="@layout/fragment_bmm" />
+    <fragment
+        android:id="@+id/ibwFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.calc.ideal_body_weight.IbwFragment"
+        android:label="fragment_ibw"
+        tools:layout="@layout/fragment_ibw" />
+    <fragment
+        android:id="@+id/tbbFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.calc.total_body_blood.TbbFragment"
+        android:label="fragment_tbb"
+        tools:layout="@layout/fragment_tbb" />
+    <fragment
+        android:id="@+id/tbwFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.calc.total_body_water.TbwFragment"
+        android:label="fragment_tbw"
+        tools:layout="@layout/fragment_tbw" />
+    <fragment
+        android:id="@+id/wthFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.calc.waist_to_height_ratio.WthFragment"
+        android:label="fragment_wth"
+        tools:layout="@layout/fragment_wth" />
+
+</navigation>

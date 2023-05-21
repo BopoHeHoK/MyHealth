@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.presentation.screen.tab.calc.body_muscle_mass.BmmFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/main_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/arrow_back"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="start|center"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/TextSemiBold.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/bmm"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/TextBold.L"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/body_muscle_mass"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/gender"
+            style="@style/TextBold.XL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/gender"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tb_gender"
+            android:layout_width="@dimen/_96sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/gender"
+            app:layout_constraintTop_toBottomOf="@+id/gender"
+            app:tabGravity="fill"
+            app:tabIconTint="@null"
+            app:tabIndicator="@drawable/tab_indicator_profile"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabIndicatorColor="@color/mantis"
+            app:tabIndicatorHeight="@dimen/_48sdp"
+            app:tabMaxWidth="0dp"
+            app:tabMode="fixed"
+            app:tabRippleColor="@null">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="@dimen/_48sdp"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_male" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="@dimen/_48sdp"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_female" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <TextView
+            android:id="@+id/height"
+            style="@style/TextBold.XL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/height"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/gender"
+            app:layout_constraintTop_toBottomOf="@+id/tb_gender" />
+
+        <com.kevalpatel2106.rulerpicker.RulerValuePicker
+            android:id="@+id/rp_height"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/main_green"
+            app:drawableEndCompat="@drawable/pencil"
+            app:indicator_color="@android:color/white"
+            app:indicator_interval="10dp"
+            app:indicator_width="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/height"
+            app:layout_constraintTop_toBottomOf="@+id/height"
+            app:max_value="250"
+            app:min_value="0"
+            app:notch_color="@android:color/white"
+            app:ruler_text_size="6sp"
+            tools:ignore="MissingClass" />
+
+        <TextView
+            android:id="@+id/weight"
+            style="@style/TextBold.XL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/weight"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/height"
+            app:layout_constraintTop_toBottomOf="@+id/rp_height" />
+
+        <com.kevalpatel2106.rulerpicker.RulerValuePicker
+            android:id="@+id/rp_weight"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/main_green"
+            app:drawableEndCompat="@drawable/pencil"
+            app:indicator_color="@android:color/white"
+            app:indicator_interval="10dp"
+            app:indicator_width="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/weight"
+            app:layout_constraintTop_toBottomOf="@+id/weight"
+            app:max_value="500"
+            app:min_value="0"
+            app:notch_color="@android:color/white"
+            app:ruler_text_size="6sp"
+            tools:ignore="MissingClass" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/calculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/btn_green"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rp_weight">
+
+            <ImageView
+                android:id="@+id/img_calc"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_calculator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/TextBold.MD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/calculate"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/img_calc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_calc"
+                app:layout_constraintTop_toTopOf="@+id/img_calc" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+    tools:context=".app.presentation.screen.tab.schedule.ScheduleFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/schedule_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_6sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/water_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_48sdp"
+            android:background="@drawable/bg_white"
+            android:elevation="@dimen/_2sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/water"
+                style="@style/TextSemiBold.LG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:text="@string/water_reminder"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swt_water"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:thumb="@drawable/thumb_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/water"
+                app:track="@drawable/track_default" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/water_time_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/swt_water">
+
+                <RadioGroup
+                    android:id="@+id/radio_water"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_24sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/radio1"
+                        style="@style/TextBase.SM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@drawable/radio_default"
+                        android:paddingStart="@dimen/_6sdp"
+                        android:text="@string/_1"
+                        android:theme="@style/RadioButtonStyle"
+                        tools:ignore="RtlSymmetry" />
+
+                    <RadioButton
+                        android:id="@+id/radio2"
+                        style="@style/TextBase.SM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@drawable/radio_default"
+                        android:paddingStart="@dimen/_6sdp"
+                        android:text="@string/_2"
+                        android:theme="@style/RadioButtonStyle"
+                        tools:ignore="RtlSymmetry" />
+
+                    <RadioButton
+                        android:id="@+id/radio3"
+                        style="@style/TextBase.SM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@drawable/radio_default"
+                        android:paddingStart="@dimen/_6sdp"
+                        android:text="@string/_3"
+                        android:theme="@style/RadioButtonStyle"
+                        tools:ignore="RtlSymmetry" />
+
+                    <RadioButton
+                        android:id="@+id/radio4"
+                        style="@style/TextBase.SM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@drawable/radio_default"
+                        android:paddingStart="@dimen/_6sdp"
+                        android:text="@string/_4"
+                        android:theme="@style/RadioButtonStyle"
+                        tools:ignore="RtlSymmetry" />
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/img_water"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginBottom="-48dp"
+            android:background="@color/blue"
+            android:elevation="@dimen/_4sdp"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_water"
+            app:layout_constraintBottom_toTopOf="@+id/water_layout"
+            app:layout_constraintStart_toStartOf="@+id/water_layout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/food_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_48sdp"
+            android:background="@drawable/bg_white"
+            android:elevation="@dimen/_2sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/water_layout">
+
+            <TextView
+                android:id="@+id/food"
+                style="@style/TextSemiBold.LG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:text="@string/food_reminder"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swt_food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:thumb="@drawable/thumb_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/food"
+                app:track="@drawable/track_default" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/food_time_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/swt_food">
+
+                <ImageView
+                    android:id="@+id/img_food_time1"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:src="@drawable/ic_breakfast"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time1"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/food_time1"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="@string/breakfast"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time1"
+                    app:layout_constraintStart_toEndOf="@+id/img_food_time1"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time1" />
+
+                <ImageView
+                    android:id="@+id/img_clock_food_time1"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_clock"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time1"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_food_time1"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time1"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/tv_food_time1"
+                    style="@style/TextBase.MD"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/_7_00"
+                    android:textAlignment="textEnd"
+                    app:layout_constraintEnd_toStartOf="@+id/cb_food_time1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/cb_food_time1"
+                    style="@style/TextBase.MD"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/checkbox_default"
+                    android:button="@null"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time1" />
+
+                <ImageView
+                    android:id="@+id/img_food_time2"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_snack"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time2"
+                    app:layout_constraintEnd_toEndOf="@+id/img_food_time1"
+                    app:layout_constraintStart_toStartOf="@+id/img_food_time1"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time2"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/food_time2"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/snack"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time2"
+                    app:layout_constraintStart_toStartOf="@+id/food_time1"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time2" />
+
+                <ImageView
+                    android:id="@+id/img_clock_food_time2"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_clock"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time2"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_food_time2"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time2"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/tv_food_time2"
+                    style="@style/TextBase.MD"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/_10_00"
+                    android:textAlignment="textEnd"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_food_time1"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_food_time1" />
+
+                <CheckBox
+                    android:id="@+id/cb_food_time2"
+                    style="@style/TextBase.MD"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/checkbox_default"
+                    android:button="@null"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time2" />
+
+                <ImageView
+                    android:id="@+id/img_food_time3"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_lunch"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time3"
+                    app:layout_constraintEnd_toEndOf="@+id/img_food_time2"
+                    app:layout_constraintStart_toStartOf="@+id/img_food_time2"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time3"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/food_time3"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lunch"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time3"
+                    app:layout_constraintStart_toStartOf="@+id/food_time2"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time3" />
+
+                <ImageView
+                    android:id="@+id/img_clock_food_time3"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_clock"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time3"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_food_time3"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time3"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/tv_food_time3"
+                    style="@style/TextBase.MD"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/_13_00"
+                    android:textAlignment="textEnd"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_food_time2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_food_time2" />
+
+                <CheckBox
+                    android:id="@+id/cb_food_time3"
+                    style="@style/TextBase.MD"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/checkbox_default"
+                    android:button="@null"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time3" />
+
+                <ImageView
+                    android:id="@+id/img_food_time4"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_afternoon_snack"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time4"
+                    app:layout_constraintEnd_toEndOf="@+id/img_food_time3"
+                    app:layout_constraintStart_toStartOf="@+id/img_food_time3"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time4"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/food_time4"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/afternoon_snack"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time4"
+                    app:layout_constraintStart_toStartOf="@+id/food_time3"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time4" />
+
+                <ImageView
+                    android:id="@+id/img_clock_food_time4"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_clock"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time4"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_food_time4"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time4"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/tv_food_time4"
+                    style="@style/TextBase.MD"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/_16_00"
+                    android:textAlignment="textEnd"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_food_time3"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_food_time3" />
+
+                <CheckBox
+                    android:id="@+id/cb_food_time4"
+                    style="@style/TextBase.MD"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/checkbox_default"
+                    android:button="@null"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time4" />
+
+                <ImageView
+                    android:id="@+id/img_food_time5"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_dinner"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time5"
+                    app:layout_constraintEnd_toEndOf="@+id/img_food_time4"
+                    app:layout_constraintStart_toStartOf="@+id/img_food_time4"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time5"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/food_time5"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dinner"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time5"
+                    app:layout_constraintStart_toStartOf="@+id/food_time4"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time5" />
+
+                <ImageView
+                    android:id="@+id/img_clock_food_time5"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_clock"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time5"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_food_time5"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time5"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/tv_food_time5"
+                    style="@style/TextBase.MD"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/_19_00"
+                    android:textAlignment="textEnd"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_food_time4"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_food_time4" />
+
+                <CheckBox
+                    android:id="@+id/cb_food_time5"
+                    style="@style/TextBase.MD"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/checkbox_default"
+                    android:button="@null"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_food_time5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_food_time5" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/img_food"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginBottom="-48dp"
+            android:background="@color/yellow_brown"
+            android:elevation="@dimen/_4sdp"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_food"
+            app:layout_constraintBottom_toTopOf="@+id/food_layout"
+            app:layout_constraintStart_toStartOf="@+id/food_layout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/medicine_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/bg_white"
+            android:elevation="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/food_layout">
+
+            <TextView
+                android:id="@+id/medicine"
+                style="@style/TextSemiBold.LG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:text="@string/medicine_reminder"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swt_medicine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:thumb="@drawable/thumb_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/medicine"
+                app:track="@drawable/track_default" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_medicine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/swt_medicine" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_medicine"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:background="@drawable/ic_plus"
+                android:elevation="@dimen/_4sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_medicine" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/img_medicine"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginBottom="-48dp"
+            android:background="@color/green"
+            android:elevation="@dimen/_4sdp"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_medicine"
+            app:layout_constraintBottom_toTopOf="@+id/medicine_layout"
+            app:layout_constraintStart_toStartOf="@+id/medicine_layout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/weight_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_48sdp"
+            android:background="@drawable/bg_white"
+            android:elevation="@dimen/_2sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/medicine_layout">
+
+            <TextView
+                android:id="@+id/weight"
+                style="@style/TextSemiBold.LG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:text="@string/weight_reminder"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swt_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:thumb="@drawable/thumb_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weight"
+                app:track="@drawable/track_default" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/weight_time_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/swt_weight">
+
+                <CheckBox
+                    android:id="@+id/monday"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:background="@drawable/checkbox_week"
+                    android:button="@null"
+                    android:paddingBottom="2dp"
+                    android:text="@string/mon"
+                    android:textAlignment="center"
+                    android:textColor="@color/checkbox_week_text_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/tuesday"
+                    app:layout_constraintEnd_toStartOf="@+id/tuesday"
+                    app:layout_constraintTop_toTopOf="@+id/tuesday" />
+
+                <CheckBox
+                    android:id="@+id/tuesday"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:background="@drawable/checkbox_week"
+                    android:button="@null"
+                    android:paddingBottom="2dp"
+                    android:text="@string/tue"
+                    android:textAlignment="center"
+                    android:textColor="@color/checkbox_week_text_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/wednesday"
+                    app:layout_constraintEnd_toStartOf="@+id/wednesday"
+                    app:layout_constraintTop_toTopOf="@+id/wednesday" />
+
+                <CheckBox
+                    android:id="@+id/wednesday"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:background="@drawable/checkbox_week"
+                    android:button="@null"
+                    android:paddingBottom="2dp"
+                    android:text="@string/wed"
+                    android:textAlignment="center"
+                    android:textColor="@color/checkbox_week_text_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/thursday"
+                    app:layout_constraintEnd_toStartOf="@+id/thursday"
+                    app:layout_constraintTop_toTopOf="@+id/thursday" />
+
+                <CheckBox
+                    android:id="@+id/thursday"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_minus4sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/checkbox_week"
+                    android:button="@null"
+                    android:paddingBottom="2dp"
+                    android:text="@string/thu"
+                    android:textAlignment="center"
+                    android:textColor="@color/checkbox_week_text_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/friday"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:background="@drawable/checkbox_week"
+                    android:button="@null"
+                    android:paddingBottom="2dp"
+                    android:text="@string/fri"
+                    android:textAlignment="center"
+                    android:textColor="@color/checkbox_week_text_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/thursday"
+                    app:layout_constraintStart_toEndOf="@+id/thursday"
+                    app:layout_constraintTop_toTopOf="@+id/thursday" />
+
+                <CheckBox
+                    android:id="@+id/saturday"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:background="@drawable/checkbox_week"
+                    android:button="@null"
+                    android:paddingBottom="2dp"
+                    android:text="@string/sat"
+                    android:textAlignment="center"
+                    android:textColor="@color/checkbox_week_text_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/friday"
+                    app:layout_constraintStart_toEndOf="@+id/friday"
+                    app:layout_constraintTop_toTopOf="@+id/friday" />
+
+                <CheckBox
+                    android:id="@+id/sunday"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:background="@drawable/checkbox_week"
+                    android:button="@null"
+                    android:paddingBottom="2dp"
+                    android:text="@string/sun"
+                    android:textAlignment="center"
+                    android:textColor="@color/checkbox_week_text_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/saturday"
+                    app:layout_constraintStart_toEndOf="@+id/saturday"
+                    app:layout_constraintTop_toTopOf="@+id/saturday" />
+
+                <ImageView
+                    android:id="@+id/img_clock_weight_time"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:src="@drawable/ic_clock"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/thursday"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/tv_weight_time"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="@string/_8_00"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_clock_weight_time"
+                    app:layout_constraintStart_toEndOf="@+id/img_clock_weight_time"
+                    app:layout_constraintTop_toTopOf="@+id/img_clock_weight_time" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/img_weight"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginBottom="-48dp"
+            android:background="@color/red"
+            android:elevation="@dimen/_4sdp"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_weight"
+            app:layout_constraintBottom_toTopOf="@+id/weight_layout"
+            app:layout_constraintStart_toStartOf="@+id/weight_layout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pressure_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_48sdp"
+            android:background="@drawable/bg_white"
+            android:elevation="@dimen/_2sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weight_layout">
+
+            <TextView
+                android:id="@+id/pressure"
+                style="@style/TextSemiBold.LG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:text="@string/pressure_reminder"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swt_pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:thumb="@drawable/thumb_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pressure"
+                app:track="@drawable/track_default" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pressure_time_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/swt_pressure">
+
+                <ImageView
+                    android:id="@+id/img_pressure_time1"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:src="@drawable/ic_morning"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_pressure_time1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_pressure_time1"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/pressure_time1"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="@string/morning"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_pressure_time1"
+                    app:layout_constraintStart_toEndOf="@+id/img_pressure_time1"
+                    app:layout_constraintTop_toTopOf="@+id/tv_pressure_time1" />
+
+                <ImageView
+                    android:id="@+id/img_clock_pressure_time1"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:src="@drawable/ic_clock"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_pressure_time1"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_pressure_time1"
+                    app:layout_constraintTop_toTopOf="@+id/tv_pressure_time1"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/tv_pressure_time1"
+                    style="@style/TextBase.MD"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/_7_00"
+                    android:textAlignment="textEnd"
+                    app:layout_constraintEnd_toStartOf="@+id/cb_pressure_time1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/cb_pressure_time1"
+                    style="@style/TextBase.MD"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/checkbox_default"
+                    android:button="@null"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_pressure_time1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_pressure_time1" />
+
+                <ImageView
+                    android:id="@+id/img_pressure_time2"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_midday"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_pressure_time2"
+                    app:layout_constraintEnd_toEndOf="@+id/img_pressure_time1"
+                    app:layout_constraintStart_toStartOf="@+id/img_pressure_time1"
+                    app:layout_constraintTop_toTopOf="@+id/tv_pressure_time2"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/pressure_time2"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="@string/afternoon"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_pressure_time2"
+                    app:layout_constraintStart_toEndOf="@+id/img_pressure_time2"
+                    app:layout_constraintTop_toTopOf="@+id/tv_pressure_time2" />
+
+                <ImageView
+                    android:id="@+id/img_clock_pressure_time2"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:src="@drawable/ic_clock"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_pressure_time2"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_pressure_time2"
+                    app:layout_constraintTop_toTopOf="@+id/tv_pressure_time2"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/tv_pressure_time2"
+                    style="@style/TextBase.MD"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/_13_00"
+                    android:textAlignment="textEnd"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_pressure_time1"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_pressure_time1" />
+
+                <CheckBox
+                    android:id="@+id/cb_pressure_time2"
+                    style="@style/TextBase.MD"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/checkbox_default"
+                    android:button="@null"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_pressure_time2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_pressure_time2" />
+
+                <ImageView
+                    android:id="@+id/img_pressure_time3"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_evening"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_pressure_time3"
+                    app:layout_constraintEnd_toEndOf="@+id/img_pressure_time2"
+                    app:layout_constraintStart_toStartOf="@+id/img_pressure_time2"
+                    app:layout_constraintTop_toTopOf="@+id/tv_pressure_time3"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/pressure_time3"
+                    style="@style/TextBase.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="@string/evening"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_pressure_time3"
+                    app:layout_constraintStart_toEndOf="@+id/img_pressure_time3"
+                    app:layout_constraintTop_toTopOf="@+id/tv_pressure_time3" />
+
+                <ImageView
+                    android:id="@+id/img_clock_pressure_time3"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:src="@drawable/ic_clock"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_pressure_time3"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_pressure_time3"
+                    app:layout_constraintTop_toTopOf="@+id/tv_pressure_time3"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/tv_pressure_time3"
+                    style="@style/TextBase.MD"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/_19_00"
+                    android:textAlignment="textEnd"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_pressure_time2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_pressure_time2" />
+
+                <CheckBox
+                    android:id="@+id/cb_pressure_time3"
+                    style="@style/TextBase.MD"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/checkbox_default"
+                    android:button="@null"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_pressure_time3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_pressure_time3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/img_pressure"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginBottom="-48dp"
+            android:background="@color/yellow_brown"
+            android:elevation="@dimen/_4sdp"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_pressure"
+            app:layout_constraintBottom_toTopOf="@+id/pressure_layout"
+            app:layout_constraintStart_toStartOf="@+id/pressure_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

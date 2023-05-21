@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="24dp"
+    tools:context=".app.presentation.screen.tab.main.edit_mental.EditMentalFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/main_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/arrow_back"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="start|center"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/TextSemiBold.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/mental_condition"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/mental_condition_date"
+            style="@style/TextBold.XL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/date"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_mental_condition_date"
+            style="@style/TextBase.SM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_green"
+            android:padding="16dp"
+            android:text="@string/_2023_05_05"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mental_condition_date" />
+
+        <TextView
+            android:id="@+id/mental_condition_quality"
+            style="@style/TextBold.XL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/mental_condition_quality"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_mental_condition_date" />
+
+        <RadioGroup
+            android:id="@+id/radio_mental_condition_quality"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mental_condition_quality">
+
+            <RadioButton
+                android:id="@+id/radio_quality_bad"
+                style="@style/TextBase.SM"
+                android:layout_width="40dp"
+                android:layout_height="56dp"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_quality_bad"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/radio_quality_sad"
+                style="@style/TextBase.SM"
+                android:layout_width="40dp"
+                android:layout_height="56dp"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_quality_sad"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/radio_quality_normal"
+                style="@style/TextBase.SM"
+                android:layout_width="40dp"
+                android:layout_height="56dp"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_quality_normal"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/radio_quality_good"
+                style="@style/TextBase.SM"
+                android:layout_width="40dp"
+                android:layout_height="56dp"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_quality_good"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/radio_quality_great"
+                style="@style/TextBase.SM"
+                android:layout_width="40dp"
+                android:layout_height="56dp"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_quality_great"
+                android:button="@null" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/add_note"
+            style="@style/TextBold.XL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/add_note"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radio_mental_condition_quality" />
+
+        <EditText
+            android:id="@+id/et_note_add"
+            style="@style/TextBase.MD"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/write_something"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_note" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_note_add" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/btn_green"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rc_note">
+
+            <ImageView
+                android:id="@+id/img_save"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_save"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/TextBold.MD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/img_save"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_save"
+                app:layout_constraintTop_toTopOf="@+id/img_save" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

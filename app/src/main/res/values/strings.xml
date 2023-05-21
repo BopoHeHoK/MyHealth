@@ -1,0 +1,173 @@
+<resources>
+
+    <!-- Основное -->
+    <string name="version_number">1.0.0</string>
+    <string name="app_name">Моё здоровье</string>
+    <string name="save">Сохранить</string>
+    <!-- Основное -->
+
+    <!-- TabLayout -->
+    <string name="home_fragment">Главная</string>
+    <string name="schedule_fragment">Режим</string>
+    <string name="calc_fragment">Расчёт</string>
+    <string name="article_fragment">Статьи</string>
+    <string name="profile_fragment">Профиль</string>
+    <!-- TabLayout -->
+
+    <!-- Вход -->
+    <string name="email">Email</string>
+    <string name="et_email">Введите email</string>
+    <string name="password">Пароль</string>
+    <string name="et_password">Введите пароль</string>
+    <string name="no_account">Нет аккаунта?</string>
+    <string name="to_registration">Зарегистрируйтесь!</string>
+    <string name="login">Войти</string>
+    <string name="first_name">Имя</string>
+    <string name="et_first_name">Введите имя</string>
+    <string name="last_name">Фамилия</string>
+    <string name="et_last_name">Введите фамилию</string>
+    <string name="et_repeat_password">Повторите пароль</string>
+    <string name="have_an_account">Есть аккаунт?</string>
+    <string name="to_login">Войдите!</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="et_phone_number">Введите номер телефона</string>
+    <string name="change_password">Изменить пароль</string>
+    <string name="change">Изменить</string>
+    <string name="last_password">Старый пароль</string>
+    <string name="et_last_password">Введите старый пароль</string>
+    <string name="new_password">Новый пароль</string>
+    <string name="et_new_password">Введите новый пароль</string>
+    <string name="et_repeat_new_password">Повторите новый пароль</string>
+    <!-- Вход -->
+
+    <!-- Главная -->
+    <string name="your_dream">Ваш сон</string>
+    <string name="dream">Сон</string>
+    <string name="date">Дата</string>
+    <string name="dream_quality">Качество сна</string>
+    <string name="add_note">Добавить заметку</string>
+    <string name="write_something">Напишите что-нибудь</string>
+    <string name="mental_condition">Психическое состояние</string>
+    <string name="mental_condition_quality">Качество психического состояния</string>
+    <string name="physical_condition">Физическое состояние</string>
+    <string name="physical_condition_quality">Качество физического состояния</string>
+    <string name="note">Заметка</string>
+    <string name="yyyy_0m_0d">%d-0%d-0%d</string>
+    <string name="yyyy_0m_dd">%d-0%d-%d</string>
+    <string name="yyyy_mm_0d">%d-%d-0%d</string>
+    <string name="yyyy_mm_dd">%d-%d-%d</string>
+    <!-- Главная -->
+
+    <!-- Режим -->
+    <string name="water_reminder">Напоминание: вода</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="food_reminder">Напоминание: еда</string>
+    <string name="h0m">%d:0%d</string>
+    <string name="hm">%d:%d</string>
+    <string name="breakfast">Завтрак</string>
+    <string name="snack">Перекус</string>
+    <string name="lunch">Обед</string>
+    <string name="afternoon_snack">Полдник</string>
+    <string name="dinner">Ужин</string>
+    <string name="medicine_reminder">Напоминание: лекарства</string>
+    <string name="medicines">Лекарства</string>
+    <string name="medicine_name">Название лекарства</string>
+    <string name="et_medicine_name">Введите название лекарства</string>
+    <string name="medicine_dosage">Дозировка</string>
+    <string name="et_medicine_dosage">Введите дозировку</string>
+    <string name="period">Период</string>
+    <string name="from">с</string>
+    <string name="to">по</string>
+    <string name="disease_name">Название заболевания</string>
+    <string name="et_disease_name">Введите название заболевания</string>
+    <string name="add_time">Добавить время</string>
+    <string name="weight_reminder">Напоминание: вес</string>
+    <string name="mon">пн</string>
+    <string name="tue">вт</string>
+    <string name="wed">ср</string>
+    <string name="thu">чт</string>
+    <string name="fri">пт</string>
+    <string name="sat">сб</string>
+    <string name="sun">вс</string>
+    <string name="pressure_reminder">Напоминание: давление</string>
+    <string name="morning">Утро</string>
+    <string name="afternoon">День</string>
+    <string name="evening">Вечер</string>
+    <!-- Режим -->
+
+    <!-- Расчёт -->
+    <string name="calculate">Вычислить</string>
+    <string name="bmi">BMI</string>
+    <string name="bmm">BMM</string>
+    <string name="ibw">IBW</string>
+    <string name="tbb">TBB</string>
+    <string name="tbw">TBW</string>
+    <string name="wth">WTH</string>
+    <string name="kgs">&#160;кг</string>
+    <string name="ls">&#160;л</string>
+    <string name="body_mass_index">Индекс массы тела</string>
+    <string name="body_muscle_mass">Мышечная масса тела</string>
+    <string name="ideal_body_weight">Идеальный вес тела</string>
+    <string name="total_body_blood">Общее количество крови в организме</string>
+    <string name="total_body_water">Общее количество воды в организме</string>
+    <string name="waist_to_height_ratio">Соотношение талии к росту</string>
+    <string name="calc_result">%.2f</string>
+    <!-- Расчёт -->
+
+    <!-- Статьи -->
+    <string name="statistics">Статистика</string>
+    <string name="title">Название</string>
+    <string name="text">Текст</string>
+    <string name="open">Открыть</string>
+    <string name="zero">0</string>
+    <string name="article">Статья</string>
+    <!-- Статьи -->
+
+    <!-- Профиль -->
+    <string name="test_name">Иванов Иван</string>
+    <string name="edit_profile">Редактировать профиль</string>
+    <string name="change_biometrics">Изменить биометрию</string>
+    <string name="get_premium">Получить премиум</string>
+    <string name="logout">Выйти</string>
+    <string name="premium">Premium</string>
+    <!-- Профиль -->
+
+    <!-- Биометрия -->
+    <string name="biometrics">Биометрия</string>
+    <string name="age">Возраст, лет</string>
+    <string name="gender">Пол</string>
+    <string name="height">Рост, см</string>
+    <string name="weight">Вес, кг</string>
+    <string name="waist">Рамзер талии, см</string>
+    <!-- Биометрия -->
+
+    <!-- Время -->
+    <string name="_7_00">7:00</string>
+    <string name="_8_00">8:00</string>
+    <string name="_10_00">10:00</string>
+    <string name="_12_00">12:00</string>
+    <string name="_13_00">13:00</string>
+    <string name="_16_00">16:00</string>
+    <string name="_19_00">19:00</string>
+    <string name="_2023_05_05">2023–05–05</string>
+    <string name="_2023_06_05">2023–06–05</string>
+    <!-- Время -->
+
+    <!-- Ошибки-->
+    <string name="error">Ошибка</string>
+    <string name="wrong_email_or_password_error">Неверный email или пароль</string>
+    <string name="email_exist_error">Пользователь с таким email уже существует</string>
+    <string name="empty_field_error">Поле не должно быть пустым</string>
+    <string name="email_format_error">Email должен быть в формате mail@mail.com</string>
+    <string name="password_length_error">Пароль должен содержать больше 6 символов</string>
+    <string name="repeat_password_error">Пароли не совпадают</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Ошибки-->
+
+
+</resources>

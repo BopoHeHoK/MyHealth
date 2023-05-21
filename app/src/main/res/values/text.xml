@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="text_xxs">10sp</dimen>
+    <dimen name="text_xs">12sp</dimen>
+    <dimen name="text_sm">14sp</dimen>
+    <dimen name="text_md">16sp</dimen>
+    <dimen name="text_lg">18sp</dimen>
+    <dimen name="text_xl">20sp</dimen>
+    <dimen name="text_l">22sp</dimen>
+    <dimen name="text_xxl">24sp</dimen>
+    <dimen name="text_xxxl">26sp</dimen>
+    <dimen name="text_xxxxl">28sp</dimen>
+    <dimen name="text_xxxxxl">30sp</dimen>
+
+    <dimen name="start_title_text_size">28sp</dimen>
+
+    <style name="TextBase">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextBase.XXS">
+        <item name="android:textSize">@dimen/text_xxs</item>
+    </style>
+
+    <style name="TextBase.XS">
+        <item name="android:textSize">@dimen/text_xs</item>
+    </style>
+
+    <style name="TextBase.SM">
+        <item name="android:textSize">@dimen/text_sm</item>
+    </style>
+
+    <style name="TextBase.MD">
+        <item name="android:textSize">@dimen/text_md</item>
+    </style>
+
+    <style name="TextBase.LG">
+        <item name="android:textSize">@dimen/text_lg</item>
+    </style>
+
+    <style name="TextBase.XL">
+        <item name="android:textSize">@dimen/text_xl</item>
+    </style>
+
+    <style name="TextBase.XXL">
+        <item name="android:textSize">@dimen/text_xxl</item>
+    </style>
+
+    <style name="TextBase.XXXL">
+        <item name="android:textSize">@dimen/text_xxxl</item>
+    </style>
+
+    <style name="TextSemiBold">
+        <item name="android:fontFamily">@font/lato_semibold</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextSemiBold.XXS">
+        <item name="android:textSize">@dimen/text_xxs</item>
+    </style>
+
+    <style name="TextSemiBold.XS">
+        <item name="android:textSize">@dimen/text_xs</item>
+    </style>
+
+    <style name="TextSemiBold.SM">
+        <item name="android:textSize">@dimen/text_sm</item>
+    </style>
+
+    <style name="TextSemiBold.MD">
+        <item name="android:textSize">@dimen/text_md</item>
+    </style>
+
+    <style name="TextSemiBold.LG">
+        <item name="android:textSize">@dimen/text_lg</item>
+    </style>
+
+    <style name="TextSemiBold.XL">
+        <item name="android:textSize">@dimen/text_xl</item>
+    </style>
+
+    <style name="TextSemiBold.L">
+        <item name="android:textSize">@dimen/text_l</item>
+    </style>
+
+    <style name="TextBold">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextBold.XXS">
+        <item name="android:textSize">@dimen/text_xxs</item>
+    </style>
+
+    <style name="TextBold.XS">
+        <item name="android:textSize">@dimen/text_xs</item>
+    </style>
+
+    <style name="TextBold.SM">
+        <item name="android:textSize">@dimen/text_sm</item>
+    </style>
+
+    <style name="TextBold.MD">
+        <item name="android:textSize">@dimen/text_md</item>
+    </style>
+
+    <style name="TextBold.LG">
+        <item name="android:textSize">@dimen/text_lg</item>
+    </style>
+
+    <style name="TextBold.XL">
+        <item name="android:textSize">@dimen/text_xl</item>
+    </style>
+
+    <style name="TextBold.XXL">
+        <item name="android:textSize">@dimen/text_l</item>
+    </style>
+
+    <style name="TextBold.XXXL">
+        <item name="android:textSize">@dimen/text_xxl</item>
+    </style>
+
+    <style name="TextBold.XXXXL">
+        <item name="android:textSize">@dimen/text_xxxl</item>
+    </style>
+
+    <style name="TextBold.XXXXXL">
+        <item name="android:textSize">@dimen/text_xxxxl</item>
+    </style>
+
+    <style name="TextBold.L">
+        <item name="android:textSize">@dimen/text_xxxxxl</item>
+    </style>
+
+    <style name="TextLight">
+        <item name="android:fontFamily">@font/lato_light</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextLight.XXS">
+        <item name="android:textSize">@dimen/text_xxs</item>
+    </style>
+
+    <style name="TextLight.XS">
+        <item name="android:textSize">@dimen/text_xs</item>
+    </style>
+
+    <style name="TextLight.SM">
+        <item name="android:textSize">@dimen/text_sm</item>
+    </style>
+
+    <style name="TextLight.MD">
+        <item name="android:textSize">@dimen/text_md</item>
+    </style>
+
+    <style name="TextLight.LG">
+        <item name="android:textSize">@dimen/text_lg</item>
+    </style>
+
+    <style name="TextLight.XL">
+        <item name="android:textSize">@dimen/text_xl</item>
+    </style>
+</resources>
