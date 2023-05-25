@@ -5,11 +5,15 @@ import com.test.myhealth.domain.model.*
 
 interface UserRepository {
 
-    fun setUserIdSharedPreferences(id: Long)
+    fun setUserIdSharedPreferences(userId: Long)
 
     fun getUserIdSharedPreferences(): Long
 
-    fun getUserFromDb(id: Long): User
+    fun setArticleIdSharedPreferences(id: Long)
+
+    fun getArticleIdSharedPreferences(): Long
+
+    fun getUserFromDb(userId: Long): User
 
     fun getUserParameterFromDb(userId: Long): UserParameter
 
@@ -44,6 +48,8 @@ interface UserRepository {
     fun getPressureFromDb(userId: Long): Pressure
 
     fun getArticlesFromDb(): List<Article>
+
+    fun getArticleFromDbByArticleId(articleId: Long): Article
 
     suspend fun saveRolesToDb(role: Role)
 

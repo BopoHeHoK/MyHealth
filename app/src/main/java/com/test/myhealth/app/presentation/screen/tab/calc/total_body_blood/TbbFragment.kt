@@ -56,7 +56,7 @@ class TbbFragment : Fragment() {
                 val userParameter = observerUserParameter(getUserId())
                 if (userParameter.genderId != null) {
                     genderId = userParameter.genderId.toInt()
-                    tbGender.getTabAt(genderId)?.select()
+                    tbGender.getTabAt(genderId - 1)?.select()
                 } else {
                     tbGender.getTabAt(0)?.select()
                 }

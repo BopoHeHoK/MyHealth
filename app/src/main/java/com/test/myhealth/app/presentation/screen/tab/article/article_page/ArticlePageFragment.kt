@@ -1,11 +1,13 @@
 package com.test.myhealth.app.presentation.screen.tab.article.article_page
 
+import android.content.Intent.getIntent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.test.myhealth.app.app.App
 import com.test.myhealth.databinding.FragmentArticlePageBinding
 import javax.inject.Inject
@@ -39,5 +41,20 @@ class ArticlePageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        observeArticles(view)
+
+    }
+
+    private fun observeArticles(view: View) {
+        binding.apply {
+            articlePageViewModel.apply {
+                val article = observerArticle(getArticleId())
+                title.text = article.title
+                Glide.with(view.context).load("http://192.168.1.51:5000/${article.img}")
+                    .into(illustration)
+                content.text = article.content
+                likes.text = article.likes.toString()
+            }
+        }
     }
 }

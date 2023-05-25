@@ -29,9 +29,9 @@ class ConverterBMImpl : ConverterBM {
         return User(
             id = userBodyToGet.id,
             email = userBodyToGet.email,
-            phoneNumber = userBodyToGet.phone_number,
-            firstName = userBodyToGet.first_name,
-            lastName = userBodyToGet.last_name,
+            phoneNumber = userBodyToGet.phoneNumber,
+            firstName = userBodyToGet.firstName,
+            lastName = userBodyToGet.lastName,
             roleId = userBodyToGet.roleId,
         )
     }
@@ -164,15 +164,15 @@ class ConverterBMImpl : ConverterBM {
             id = foodBody.id,
             mode = foodBody.mode,
             time1 = foodBody.time1,
-            time1_mode = foodBody.time1_mode,
+            time1_mode = foodBody.time1Mode,
             time2 = foodBody.time2,
-            time2_mode = foodBody.time2_mode,
+            time2_mode = foodBody.time2Mode,
             time3 = foodBody.time3,
-            time3_mode = foodBody.time3_mode,
+            time3_mode = foodBody.time3Mode,
             time4 = foodBody.time4,
-            time4_mode = foodBody.time4_mode,
+            time4_mode = foodBody.time4Mode,
             time5 = foodBody.time5,
-            time5_mode = foodBody.time5_mode,
+            time5_mode = foodBody.time5Mode,
             userId = foodBody.userId,
         )
     }
@@ -191,11 +191,11 @@ class ConverterBMImpl : ConverterBM {
             val converted = MedicineInfo(
                 id = it.id,
                 mode = it.mode,
-                medicine_name = it.medicine_name,
-                medicine_dosage = it.medicine_dosage,
-                disease_name = it.disease_name,
-                start_day = it.start_day,
-                end_day = it.end_day,
+                medicine_name = it.medicineName,
+                medicine_dosage = it.medicineDosage,
+                disease_name = it.diseaseName,
+                start_day = it.startDay,
+                end_day = it.endDay,
                 medicineId = it.medicineId,
             )
             result.add(converted)
@@ -237,11 +237,11 @@ class ConverterBMImpl : ConverterBM {
             id = pressureBody.id,
             mode = pressureBody.mode,
             time1 = pressureBody.time1,
-            time1_mode = pressureBody.time1_mode,
+            time1_mode = pressureBody.time1Mode,
             time2 = pressureBody.time2,
-            time2_mode = pressureBody.time2_mode,
+            time2_mode = pressureBody.time2Mode,
             time3 = pressureBody.time3,
-            time3_mode = pressureBody.time3_mode,
+            time3_mode = pressureBody.time3Mode,
             userId = pressureBody.userId,
         )
     }

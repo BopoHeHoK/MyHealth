@@ -1,6 +1,5 @@
 package com.test.myhealth.data.repository
 
-import android.util.Log
 import com.test.myhealth.data.db.MyHealthDatabase
 import com.test.myhealth.data.storage.converters.ConverterEM
 import com.test.myhealth.data.storage.converters.ConverterME
@@ -21,6 +20,14 @@ class UserRepositoryImpl(
 
     override fun getUserIdSharedPreferences(): Long {
         return userStorage.getUserId()
+    }
+
+    override fun setArticleIdSharedPreferences(id: Long) {
+        userStorage.setArticleId(id = id)
+    }
+
+    override fun getArticleIdSharedPreferences(): Long {
+        return userStorage.getArticleId()
     }
 
     override fun getUserFromDb(id: Long): User {
@@ -120,6 +127,10 @@ class UserRepositoryImpl(
 
     override fun getArticlesFromDb(): List<Article> {
         return converterEM.toArticleModelList(myHealthDatabase.myHealthDao().getAllArticles())
+    }
+
+    override fun getArticleFromDbByArticleId(articleId: Long): Article {
+        return converterEM.toArticleModel(myHealthDatabase.myHealthDao().getArticle(id = articleId))
     }
 
     override suspend fun saveRolesToDb(role: Role) {

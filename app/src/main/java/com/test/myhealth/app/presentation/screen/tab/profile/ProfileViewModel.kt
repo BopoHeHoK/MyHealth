@@ -16,11 +16,11 @@ class ProfileViewModel(
         return getUserIdFromSharedPrefsUseCase.execute()
     }
 
-    fun deleteId() {
-        setUserIdToSharedPrefsUseCase.execute(id = 0L)
+    fun deleteUserId() {
+        setUserIdToSharedPrefsUseCase.execute(userId = 0L)
     }
 
     fun observerUser(id: Long): User {
-        return getUserFromDbByIdUseCase.execute(id = id)
+        return getUserFromDbByIdUseCase.execute(userId = id)
     }
 }

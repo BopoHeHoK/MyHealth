@@ -33,6 +33,11 @@ android {
     buildFeatures {
         viewBinding true
     }
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
+    }
 }
 
 dependencies {
@@ -47,14 +52,18 @@ dependencies {
     def navigation_version = "2.5.3"
     def intuit_version = "1.0.6"
     def glide_version = "4.12.0"
+    def ruler_picker_version = "1.1"
+    def chart_version = "3.1.0"
+    def material_dialogs = "3.3.0"
+    def jwt_decoder_version = "2.0.2"
     def lifecycle_version = "2.5.1"
     def extensions_version= "1.1.1"
     def retrofit_version = "2.9.0"
     def room_version = "2.4.3"
-    def dagger_version = '2.44.2'
+    def dagger_version = "2.44.2"
     def inject_version = "1"
-    def ruler_picker = "1.1"
-    def material_dialogs = "3.3.0"
+    def junit_jupiter_version = "5.8.2"
+    def mockito_version = "4.0.0"
 
     implementation "androidx.core:core-ktx:${kotlin_version}"
     implementation "androidx.appcompat:appcompat:${appcompat_version}"
@@ -77,6 +86,24 @@ dependencies {
     //glide
     implementation "com.github.bumptech.glide:glide:$glide_version"
 
+    //ruler picker
+    implementation files("libs/ruler-picker-${ruler_picker_version}.aar")
+
+    //chart and graph
+    implementation "com.github.PhilJay:MPAndroidChart:${chart_version}"
+
+    //material dialogs
+    implementation "com.afollestad.material-dialogs:core:${material_dialogs}"
+    implementation "com.afollestad.material-dialogs:input:${material_dialogs}"
+    implementation "com.afollestad.material-dialogs:files:${material_dialogs}"
+    implementation "com.afollestad.material-dialogs:color:${material_dialogs}"
+    implementation "com.afollestad.material-dialogs:datetime:${material_dialogs}"
+    implementation "com.afollestad.material-dialogs:bottomsheets:${material_dialogs}"
+    implementation "com.afollestad.material-dialogs:lifecycle:${material_dialogs}"
+
+    //jwt decoder
+    implementation "com.auth0.android:jwtdecode:${jwt_decoder_version}"
+
     //videoModel mvvm
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
@@ -97,18 +124,8 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     implementation "javax.inject:javax.inject:${inject_version}"
 
-    //JWT-decoder
-    implementation 'com.auth0.android:jwtdecode:2.0.2'
-
-    //ruler-picker
-    implementation files("libs/ruler-picker-${ruler_picker}.aar")
-
-    //material dialogs
-    implementation "com.afollestad.material-dialogs:core:${material_dialogs}"
-    implementation "com.afollestad.material-dialogs:input:${material_dialogs}"
-    implementation "com.afollestad.material-dialogs:files:${material_dialogs}"
-    implementation "com.afollestad.material-dialogs:color:${material_dialogs}"
-    implementation "com.afollestad.material-dialogs:datetime:${material_dialogs}"
-    implementation "com.afollestad.material-dialogs:bottomsheets:${material_dialogs}"
-    implementation "com.afollestad.material-dialogs:lifecycle:${material_dialogs}"
+    //unit tests
+    testImplementation "org.junit.jupiter:junit-jupiter:${junit_jupiter_version}"
+    testImplementation "org.mockito:mockito-core:${mockito_version}"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:${mockito_version}"
 }

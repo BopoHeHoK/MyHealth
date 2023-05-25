@@ -76,7 +76,7 @@ class SplashFragment : Fragment() {
             val roles = listOf(Role(1, "USER"), Role(2, "PREMIUM"), Role(3, "ADMIN"))
             for (role in roles)
                 upsertRole(role)
-            val genders = listOf(Gender(0, "Male"), Gender(1, "Female"))
+            val genders = listOf(Gender(1, "Male"), Gender(2, "Female"))
             for (gender in genders)
                 upsertGender(gender)
             observeUser()

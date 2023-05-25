@@ -191,13 +191,20 @@ interface MyHealthDao {
 
     //PRESSURE//
 
-    //ARTICLE//
+    //ARTICLES//
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertArticle(articleEntity: ArticleEntity)
 
     @Query("SELECT * FROM articles")
     fun getAllArticles(): List<ArticleEntity>
+
+    //ARTICLES//
+
+    //ARTICLE//
+
+    @Query("SELECT * FROM articles WHERE id = :id")
+    fun getArticle(id: Long): ArticleEntity
 
     //ARTICLE//
 }

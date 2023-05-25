@@ -19,7 +19,7 @@ class UserSetupViewModel(
     }
 
     fun observerUser(id: Long): User {
-        return getUserFromDbByIdUseCase.execute(id = id)
+        return getUserFromDbByIdUseCase.execute(userId = id)
     }
 
     fun upsertUser(user: User) {

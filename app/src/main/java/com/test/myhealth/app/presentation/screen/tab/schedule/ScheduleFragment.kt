@@ -146,6 +146,8 @@ class ScheduleFragment : Fragment() {
                 medicineId = medicine.id
                 if (medicine.mode) {
                     swtMedicine.isChecked = true
+                    rvMedicine.visibility = View.VISIBLE
+                    btnMedicine.visibility = View.VISIBLE
                 }
                 medicineInfoAdapter.setMedicineInfoList(observerMedicineInfo(medicineId = medicine.id))
             }

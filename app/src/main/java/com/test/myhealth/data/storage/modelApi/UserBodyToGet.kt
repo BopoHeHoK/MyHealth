@@ -3,9 +3,9 @@ package com.test.myhealth.data.storage.modelApi
 data class UserBodyToGet(
     val id: Long,
     val email: String?,
-    val phone_number: String?,
-    val first_name: String?,
-    val last_name: String?,
+    val phoneNumber: String?,
+    val firstName: String?,
+    val lastName: String?,
     val roleId: Long,
     val userParameter: UserParameterBody,
     val rating: List<RatingBody>,

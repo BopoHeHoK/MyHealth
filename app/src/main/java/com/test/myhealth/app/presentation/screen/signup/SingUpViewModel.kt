@@ -25,8 +25,8 @@ class SingUpViewModel(
     private fun registerToData(register: Register): RegisterBody {
         return RegisterBody(
             email = register.email,
-            first_name = register.first_name,
-            last_name = register.last_name,
+            firstName = register.first_name,
+            lastName = register.last_name,
             password = register.password
         )
     }

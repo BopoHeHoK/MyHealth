@@ -57,6 +57,9 @@
         <action
             android:id="@+id/action_rootFragment_to_wthFragment"
             app:destination="@id/wthFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_articlePageFragment"
+            app:destination="@id/articlePageFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -189,5 +192,10 @@
         android:name="com.test.myhealth.app.presentation.screen.tab.calc.waist_to_height_ratio.WthFragment"
         android:label="fragment_wth"
         tools:layout="@layout/fragment_wth" />
+    <fragment
+        android:id="@+id/articlePageFragment"
+        android:name="com.test.myhealth.app.presentation.screen.tab.article.article_page.ArticlePageFragment"
+        android:label="fragment_article_page"
+        tools:layout="@layout/fragment_article_page" />
 
 </navigation>

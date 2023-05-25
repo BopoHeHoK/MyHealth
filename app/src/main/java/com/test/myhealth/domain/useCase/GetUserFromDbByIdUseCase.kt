@@ -5,7 +5,7 @@ import com.test.myhealth.domain.model.User
 
 class GetUserFromDbByIdUseCase(private val userRepository: UserRepository) {
 
-    fun execute(id: Long): User {
-        return userRepository.getUserFromDb(id = id)
+    fun execute(userId: Long): User {
+        return userRepository.getUserFromDb(userId = userId)
     }
 }

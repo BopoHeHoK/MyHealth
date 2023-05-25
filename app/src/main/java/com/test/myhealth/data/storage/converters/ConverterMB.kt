@@ -29,9 +29,9 @@ class ConverterMBImpl : ConverterMB {
         return UserBodyToSave(
             id = user.id,
             email = user.email,
-            phone_number = user.phoneNumber,
-            first_name = user.firstName,
-            last_name = user.lastName,
+            phoneNumber = user.phoneNumber,
+            firstName = user.firstName,
+            lastName = user.lastName,
             roleId = user.roleId
         )
     }

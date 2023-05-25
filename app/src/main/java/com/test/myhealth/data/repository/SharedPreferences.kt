@@ -20,8 +20,17 @@ class SharedPreferences(
         return sharedPreferences.getLong(USER_ID, 0L)
     }
 
+    override fun setArticleId(id: Long) {
+        sharedPreferences.edit().putLong(ARTICLE_ID, id).apply()
+    }
+
+    override fun getArticleId(): Long {
+        return sharedPreferences.getLong(ARTICLE_ID, 0L)
+    }
+
     companion object SharedPrefs {
         const val SHARED_PREFS = "shared_prefs"
         const val USER_ID = "shared_prefs_user_id"
+        const val ARTICLE_ID = "shared_prefs_article_id"
     }
 }

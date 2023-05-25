@@ -67,7 +67,7 @@ class EditMentalFragment : Fragment() {
         editMentalViewModel.apply {
             addMentalInfoAdapter()
             observerMental(userId = getUserId())
-            mentalInfoAdapter.setMentalInfoList(observerMentalInfo(mentalConditionId = 2))
+            mentalInfoAdapter.setMentalInfoList(observerMentalInfo(mentalConditionId = 5))
         }
     }
 

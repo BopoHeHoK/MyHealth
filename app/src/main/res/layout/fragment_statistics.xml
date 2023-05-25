@@ -1,41 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
     tools:context=".app.presentation.screen.tab.article.statistics.StatisticsFragment">
 
-    <LinearLayout
-        android:id="@+id/toolbar"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="@color/main_green"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp">
 
-        <ImageView
-            android:id="@+id/arrow_back"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_gravity="start|center"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_arrow_back"
-            app:tint="@color/white" />
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/main_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/arrow_back"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="start|center"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/TextSemiBold.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/statistics"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/toolbar_title"
-            style="@style/TextSemiBold.L"
+            android:id="@+id/dream"
+            style="@style/TextBold.XL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start|center"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="1dp"
-            android:text="@string/statistics"
-            android:textColor="@color/white" />
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/dream"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    </LinearLayout>
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart_dream"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dream" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/physical"
+            style="@style/TextBold.XL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/physical_condition"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chart_dream" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart_physical"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/physical" />
+
+        <TextView
+            android:id="@+id/mental"
+            style="@style/TextBold.XL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/mental_condition"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chart_physical" />
+
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart_mental"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mental" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

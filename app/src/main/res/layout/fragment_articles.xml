@@ -35,25 +35,38 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
-                android:layout_width="match_parent"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/toCharts"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btn_green"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_statistics"
+                app:layout_constraintStart_toStartOf="@+id/tv_statistics"
                 app:layout_constraintTop_toBottomOf="@+id/tv_statistics">
 
                 <ImageView
-                    android:id="@+id/img_statistics"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_100sdp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ill_graph" />
+                    android:id="@+id/img_toCharts"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_statistics"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            </androidx.cardview.widget.CardView>
+                <TextView
+                    style="@style/TextBold.MD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/follow"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_toCharts"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_toCharts"
+                    app:layout_constraintTop_toTopOf="@+id/img_toCharts" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

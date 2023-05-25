@@ -22,6 +22,7 @@ interface ConverterEM {
     fun toWeightModel(weightEntity: WeightEntity): Weight
     fun toPressureModel(pressureEntity: PressureEntity): Pressure
     fun toArticleModelList(articleEntityList: List<ArticleEntity>): List<Article>
+    fun toArticleModel(articleEntity: ArticleEntity): Article
 }
 
 class ConverterEMImpl : ConverterEM {
@@ -261,6 +262,17 @@ class ConverterEMImpl : ConverterEM {
             result.add(converted)
         }
         return result
+    }
+
+    override fun toArticleModel(articleEntity: ArticleEntity): Article {
+        return Article(
+            id = articleEntity.id,
+            title = articleEntity.title,
+            content = articleEntity.content,
+            img = articleEntity.img,
+            favorites = articleEntity.favorites,
+            likes = articleEntity.likes
+        )
     }
 }
 

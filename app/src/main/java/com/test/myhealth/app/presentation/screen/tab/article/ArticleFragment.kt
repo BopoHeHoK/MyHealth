@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.test.myhealth.R
 import com.test.myhealth.app.app.App
 import com.test.myhealth.app.presentation.adapter.ArticleAdapter
 import com.test.myhealth.databinding.FragmentArticlesBinding
@@ -43,19 +45,27 @@ class ArticleFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        observeArticles()
+        observeArticles(view)
+        toStatistics(view)
     }
 
-    private fun addArticleAdapter() {
-        articleAdapter = ArticleAdapter()
+    private fun addArticleAdapter(view: View) {
+        articleAdapter = ArticleAdapter(view, articleViewModel.setArticleIdToSharedPrefsUseCase())
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(context, GridLayoutManager.VERTICAL, false)
             adapter = articleAdapter
         }
     }
 
-    private fun observeArticles() {
-        addArticleAdapter()
+    private fun observeArticles(view: View) {
+        addArticleAdapter(view)
         articleAdapter.setArticleList(articleViewModel.observerArticles())
+    }
+
+    private fun toStatistics(view: View) {
+        binding.toCharts.setOnClickListener {
+            Navigation.findNavController(view)
+                .navigate(R.id.action_rootFragment_to_statisticsFragment)
+        }
     }
 }

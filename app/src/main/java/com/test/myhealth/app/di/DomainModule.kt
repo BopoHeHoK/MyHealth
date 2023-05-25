@@ -19,8 +19,23 @@ class DomainModule {
     }
 
     @Provides
+    fun provideGetArticleIdFromSharedPrefsUseCase(userRepository: UserRepository): GetArticleIdFromSharedPrefsUseCase {
+        return GetArticleIdFromSharedPrefsUseCase(userRepository = userRepository)
+    }
+
+    @Provides
+    fun provideSetArticleIdToSharedPrefsUseCase(userRepository: UserRepository): SetArticleIdToSharedPrefsUseCase {
+        return SetArticleIdToSharedPrefsUseCase(userRepository = userRepository)
+    }
+
+    @Provides
     fun provideGetArticlesFromDbUseCase(userRepository: UserRepository): GetArticlesFromDbUseCase {
         return GetArticlesFromDbUseCase(userRepository = userRepository)
+    }
+
+    @Provides
+    fun provideGetArticleFromDbByArticleIdUseCase(userRepository: UserRepository): GetArticleFromDbByArticleIdUseCase {
+        return GetArticleFromDbByArticleIdUseCase(userRepository = userRepository)
     }
 
     @Provides

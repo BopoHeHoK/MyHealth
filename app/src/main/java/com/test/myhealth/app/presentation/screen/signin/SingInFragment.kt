@@ -11,6 +11,7 @@ import com.test.myhealth.R
 import com.test.myhealth.app.app.App
 import com.test.myhealth.databinding.FragmentSingInBinding
 import com.test.myhealth.domain.model.Login
+import java.util.regex.Pattern
 import javax.inject.Inject
 
 class SingInFragment : Fragment() {
@@ -61,6 +62,19 @@ class SingInFragment : Fragment() {
         }
     }
 
+    private fun isValidString(str: String): Boolean {
+        val EMAIL_ADDRESS_PATTERN = Pattern.compile(
+            "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+                    "\\@" +
+                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+                    "(" +
+                    "\\." +
+                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+                    ")+"
+        )
+        return EMAIL_ADDRESS_PATTERN.matcher(str).matches()
+    }
+
     private fun checkValues(): Boolean {
         binding.apply {
             emailError.visibility = View.GONE
@@ -68,6 +82,11 @@ class SingInFragment : Fragment() {
             if (etEmail.text.toString().isBlank()) {
                 emailError.visibility = View.VISIBLE
                 emailError.text = resources.getString(R.string.empty_field_error)
+                return false
+            }
+            if (etEmail.text.toString().isNotBlank() && !isValidString(etEmail.text.toString())) {
+                emailError.visibility = View.VISIBLE
+                emailError.text = resources.getString(R.string.email_format_error)
                 return false
             }
             if (etPassword.text.toString().isBlank()) {

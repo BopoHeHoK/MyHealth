@@ -120,8 +120,12 @@ class AppModule(val context: Context) {
 
     @Provides
     fun provideArticlePageViewModelFactory(
+        getArticleIdFromSharedPrefsUseCase: GetArticleIdFromSharedPrefsUseCase,
+        getArticleFromDbByArticleIdUseCase: GetArticleFromDbByArticleIdUseCase,
     ): ArticlePageViewModelFactory {
         return ArticlePageViewModelFactory(
+            getArticleIdFromSharedPrefsUseCase = getArticleIdFromSharedPrefsUseCase,
+            getArticleFromDbByArticleIdUseCase = getArticleFromDbByArticleIdUseCase,
         )
     }
 
@@ -134,10 +138,12 @@ class AppModule(val context: Context) {
 
     @Provides
     fun provideArticleViewModelFactory(
-        getArticlesFromDbUseCase: GetArticlesFromDbUseCase
+        getArticlesFromDbUseCase: GetArticlesFromDbUseCase,
+        setArticleIdToSharedPrefsUseCase: SetArticleIdToSharedPrefsUseCase,
     ): ArticleViewModelFactory {
         return ArticleViewModelFactory(
-            getArticlesFromDbUseCase = getArticlesFromDbUseCase
+            getArticlesFromDbUseCase = getArticlesFromDbUseCase,
+            setArticleIdToSharedPrefsUseCase = setArticleIdToSharedPrefsUseCase,
         )
     }
 
