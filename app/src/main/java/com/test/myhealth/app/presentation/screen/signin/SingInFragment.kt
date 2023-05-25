@@ -108,17 +108,11 @@ class SingInFragment : Fragment() {
                 getToken(login)
                 observerToken().observe(viewLifecycleOwner) {
                     setUserId()
-                    if (getUserId() != 0L) {
-                        Navigation.findNavController(view)
-                            .navigate(R.id.action_singInFragment_to_splashFragment)
-                    } else {
-                        llError.visibility = View.VISIBLE
-                        error.text = resources.getString(R.string.wrong_email_or_password_error)
-                        save(view)
-                    }
+                    Navigation.findNavController(view)
+                        .navigate(R.id.action_singInFragment_to_splashFragment)
                 }
                 llError.visibility = View.VISIBLE
-                error.text = resources.getString(R.string.error)
+                error.text = resources.getString(R.string.wrong_email_or_password_error)
                 save(view)
             }
         }
