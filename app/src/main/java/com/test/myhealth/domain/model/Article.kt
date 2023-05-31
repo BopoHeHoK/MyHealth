@@ -5,6 +5,6 @@ data class Article(
     val title: String?,
     val content: String?,
     val img: String?,
-    val favorites: Int?,
-    val likes: Int?
+    val favorites: Long?,
+    val likes: Long?
 )

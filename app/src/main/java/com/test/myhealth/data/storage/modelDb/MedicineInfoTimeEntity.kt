@@ -15,6 +15,7 @@ import androidx.room.*
 data class MedicineInfoTimeEntity(
     @PrimaryKey
     val id: Long,
+    val mode: Boolean,
     val time: String?,
     @ColumnInfo(name = "medicine_info_id")
     val medicineInfoId: Long,

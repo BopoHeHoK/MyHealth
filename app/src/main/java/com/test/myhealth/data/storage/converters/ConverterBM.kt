@@ -248,16 +248,20 @@ class ConverterBMImpl : ConverterBM {
 
     override fun toArticleModelList(articleBodyList: ArticleBodyList): List<Article> {
         val result = ArrayList<Article>()
-        articleBodyList.rows.forEach {
-            val converted = Article(
-                id = it.id,
-                title = it.title,
-                content = it.content,
-                img = it.img,
-                favorites = it.favorites,
-                likes = it.likes
-            )
-            result.add(converted)
+        articleBodyList.rows.forEach { articleBody ->
+            val converted = articleBody?.let { it ->
+                Article(
+                    id = it.id,
+                    title = it.title,
+                    content = it.content,
+                    img = it.img,
+                    favorites = it.favorites,
+                    likes = it.likes
+                )
+            }
+            if (converted != null) {
+                result.add(converted)
+            }
         }
         return result
     }

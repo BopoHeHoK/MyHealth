@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.test.myhealth.data.storage.modelDb.*
 
 @Database(
-    version = 10, entities = [
+    version = 14, entities = [
         ArticleEntity::class,
         DreamEntity::class,
         DreamInfoEntity::class,

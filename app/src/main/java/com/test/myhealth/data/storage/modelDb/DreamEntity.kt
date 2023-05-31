@@ -18,8 +18,8 @@ import androidx.room.PrimaryKey
 data class DreamEntity(
     @PrimaryKey
     val id: Long,
-    val date: String,
-    val quality: Int,
+    val date: String?,
+    val quality: Int?,
     @ColumnInfo(name = "user_id")
     val userId: Long,
 )
