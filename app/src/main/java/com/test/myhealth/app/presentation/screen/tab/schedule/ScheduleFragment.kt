@@ -1,11 +1,18 @@
 package com.test.myhealth.app.presentation.screen.tab.schedule
 
-import android.app.TimePickerDialog
+import android.app.AlarmManager
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
@@ -15,6 +22,15 @@ import com.afollestad.materialdialogs.datetime.timePicker
 import com.test.myhealth.R
 import com.test.myhealth.app.app.App
 import com.test.myhealth.app.presentation.adapter.MedicineInfoAdapter
+import com.test.myhealth.app.receiver.schedule.food.FoodTime1Receiver
+import com.test.myhealth.app.receiver.schedule.food.FoodTime2Receiver
+import com.test.myhealth.app.receiver.schedule.food.FoodTime3Receiver
+import com.test.myhealth.app.receiver.schedule.food.FoodTime4Receiver
+import com.test.myhealth.app.receiver.schedule.food.FoodTime5Receiver
+import com.test.myhealth.app.receiver.schedule.pressure.PressureTime1Receiver
+import com.test.myhealth.app.receiver.schedule.pressure.PressureTime2Receiver
+import com.test.myhealth.app.receiver.schedule.pressure.PressureTime3Receiver
+import com.test.myhealth.app.receiver.schedule.weight.WeightTimeReceiver
 import com.test.myhealth.databinding.FragmentScheduleBinding
 import com.test.myhealth.domain.model.*
 import java.util.*
@@ -35,6 +51,11 @@ class ScheduleFragment : Fragment() {
     private var medicineId = 0L
     private var weightId = 0L
     private var pressureId = 0L
+
+    private var tt = 0L
+    private lateinit var alarmManager: AlarmManager
+
+    private lateinit var pendingIntent: PendingIntent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,6 +97,294 @@ class ScheduleFragment : Fragment() {
         onFoodTimeClick(view)
         onWeightTimeClick(view)
         onPressureTimeClick(view)
+
+        createNotificationChannelFoodTime1()
+        createNotificationChannelFoodTime2()
+        createNotificationChannelFoodTime3()
+        createNotificationChannelFoodTime4()
+        createNotificationChannelFoodTime5()
+        createNotificationChannelWeightTime()
+        createNotificationChannelPressureTime1()
+        createNotificationChannelPressureTime2()
+        createNotificationChannelPressureTime3()
+    }
+
+    private fun setNotificationFoodTime1(timeInMillis: Long) {
+        alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(requireContext(), FoodTime1Receiver::class.java)
+        pendingIntent = PendingIntent.getBroadcast(
+            requireContext(),
+            0,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        alarmManager.setInexactRepeating(
+            AlarmManager.RTC_WAKEUP,
+            timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+        )
+    }
+
+    private fun setNotificationFoodTime2(timeInMillis: Long) {
+        alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(requireContext(), FoodTime2Receiver::class.java)
+        pendingIntent = PendingIntent.getBroadcast(
+            requireContext(),
+            0,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        alarmManager.setInexactRepeating(
+            AlarmManager.RTC_WAKEUP,
+            timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+        )
+    }
+
+    private fun setNotificationFoodTime3(timeInMillis: Long) {
+        alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(requireContext(), FoodTime3Receiver::class.java)
+        pendingIntent = PendingIntent.getBroadcast(
+            requireContext(),
+            0,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        alarmManager.setInexactRepeating(
+            AlarmManager.RTC_WAKEUP,
+            timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+        )
+    }
+
+    private fun setNotificationFoodTime4(timeInMillis: Long) {
+        alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(requireContext(), FoodTime4Receiver::class.java)
+        pendingIntent = PendingIntent.getBroadcast(
+            requireContext(),
+            0,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        alarmManager.setInexactRepeating(
+            AlarmManager.RTC_WAKEUP,
+            timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+        )
+    }
+
+    private fun setNotificationFoodTime5(timeInMillis: Long) {
+        alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(requireContext(), FoodTime5Receiver::class.java)
+        pendingIntent = PendingIntent.getBroadcast(
+            requireContext(),
+            0,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        alarmManager.setInexactRepeating(
+            AlarmManager.RTC_WAKEUP,
+            timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+        )
+    }
+
+    private fun setNotificationWeightTime(timeInMillis: Long) {
+        alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(requireContext(), WeightTimeReceiver::class.java)
+        pendingIntent = PendingIntent.getBroadcast(
+            requireContext(),
+            0,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        alarmManager.setInexactRepeating(
+            AlarmManager.RTC_WAKEUP,
+            timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+        )
+    }
+
+    private fun setNotificationPressureTime1(timeInMillis: Long) {
+        alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(requireContext(), PressureTime1Receiver::class.java)
+        pendingIntent = PendingIntent.getBroadcast(
+            requireContext(),
+            0,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        alarmManager.setInexactRepeating(
+            AlarmManager.RTC_WAKEUP,
+            timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+        )
+    }
+
+    private fun setNotificationPressureTime2(timeInMillis: Long) {
+        alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(requireContext(), PressureTime2Receiver::class.java)
+        pendingIntent = PendingIntent.getBroadcast(
+            requireContext(),
+            0,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        alarmManager.setInexactRepeating(
+            AlarmManager.RTC_WAKEUP,
+            timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+        )
+    }
+
+    private fun setNotificationPressureTime3(timeInMillis: Long) {
+        alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(requireContext(), PressureTime3Receiver::class.java)
+        pendingIntent = PendingIntent.getBroadcast(
+            requireContext(),
+            0,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        alarmManager.setInexactRepeating(
+            AlarmManager.RTC_WAKEUP,
+            timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+        )
+    }
+
+    private fun cancelAlarm() {
+        val intent = Intent(requireContext(), FoodTime1Receiver::class.java)
+        pendingIntent =
+            PendingIntent.getBroadcast(requireContext(), 0, intent, PendingIntent.FLAG_IMMUTABLE)
+        alarmManager.cancel(pendingIntent)
+        Toast.makeText(requireContext(), "Alarm Canceled", Toast.LENGTH_LONG).show()
+    }
+
+    private fun createNotificationChannelFoodTime1() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            val name = "foodTime1ReminderChannel"
+            val description = "Description1"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val notificationChannel = NotificationChannel("foodTime1", name, importance)
+            notificationChannel.description = description
+            val notificationManager =
+                requireContext().getSystemService(NotificationManager::class.java) as NotificationManager
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
+    }
+
+    private fun createNotificationChannelFoodTime2() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            val name = "foodTime2ReminderChannel"
+            val description = "Description2"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val notificationChannel = NotificationChannel("foodTime2", name, importance)
+            notificationChannel.description = description
+            val notificationManager =
+                requireContext().getSystemService(NotificationManager::class.java) as NotificationManager
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
+    }
+
+    private fun createNotificationChannelFoodTime3() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            val name = "foodTime3ReminderChannel"
+            val description = "Description"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val notificationChannel = NotificationChannel("foodTime3", name, importance)
+            notificationChannel.description = description
+            val notificationManager =
+                requireContext().getSystemService(NotificationManager::class.java) as NotificationManager
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
+    }
+
+    private fun createNotificationChannelFoodTime4() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            val name = "foodTime4ReminderChannel"
+            val description = "Description"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val notificationChannel = NotificationChannel("foodTime4", name, importance)
+            notificationChannel.description = description
+            val notificationManager =
+                requireContext().getSystemService(NotificationManager::class.java) as NotificationManager
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
+    }
+
+    private fun createNotificationChannelFoodTime5() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            val name = "foodTime4ReminderChannel"
+            val description = "Description"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val notificationChannel = NotificationChannel("foodTime5", name, importance)
+            notificationChannel.description = description
+            val notificationManager =
+                requireContext().getSystemService(NotificationManager::class.java) as NotificationManager
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
+    }
+
+    private fun createNotificationChannelWeightTime() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            val name = "weightTimeReminderChannel"
+            val description = "Description"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val notificationChannel = NotificationChannel("weightTime", name, importance)
+            notificationChannel.description = description
+            val notificationManager =
+                requireContext().getSystemService(NotificationManager::class.java) as NotificationManager
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
+    }
+
+    private fun createNotificationChannelPressureTime1() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            val name = "pressureTime1ReminderChannel"
+            val description = "Description"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val notificationChannel = NotificationChannel("pressureTime1", name, importance)
+            notificationChannel.description = description
+            val notificationManager =
+                requireContext().getSystemService(NotificationManager::class.java) as NotificationManager
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
+    }
+
+    private fun createNotificationChannelPressureTime2() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            val name = "pressureTime2ReminderChannel"
+            val description = "Description"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val notificationChannel = NotificationChannel("pressureTime2", name, importance)
+            notificationChannel.description = description
+            val notificationManager =
+                requireContext().getSystemService(NotificationManager::class.java) as NotificationManager
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
+    }
+
+    private fun createNotificationChannelPressureTime3() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            val name = "pressureTime3ReminderChannel"
+            val description = "Description"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val notificationChannel = NotificationChannel("pressureTime3", name, importance)
+            notificationChannel.description = description
+            val notificationManager =
+                requireContext().getSystemService(NotificationManager::class.java) as NotificationManager
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
     }
 
     private fun observeWater() {
@@ -92,12 +401,15 @@ class ScheduleFragment : Fragment() {
                     1 -> {
                         radio1.isChecked = true
                     }
+
                     2 -> {
                         radio2.isChecked = true
                     }
+
                     3 -> {
                         radio3.isChecked = true
                     }
+
                     4 -> {
                         radio4.isChecked = true
                     }
@@ -293,7 +605,19 @@ class ScheduleFragment : Fragment() {
             tvFoodTime1.setOnClickListener {
                 MaterialDialog(view.context).show {
                     timePicker { _, time ->
-                        if (time.get(Calendar.MINUTE) < 10)
+                        if (time.get(Calendar.HOUR_OF_DAY) < 10 && time.get(Calendar.MINUTE) < 10)
+                            tvFoodTime1.text = resources.getString(
+                                R.string._0h0m,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.HOUR_OF_DAY) < 10)
+                            tvFoodTime1.text = resources.getString(
+                                R.string._0hm,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.MINUTE) < 10)
                             tvFoodTime1.text = resources.getString(
                                 R.string.h0m,
                                 time.get(Calendar.HOUR_OF_DAY),
@@ -305,13 +629,29 @@ class ScheduleFragment : Fragment() {
                                 time.get(Calendar.HOUR_OF_DAY),
                                 time.get(Calendar.MINUTE)
                             )
+                        tt = time.timeInMillis
+                    }
+                    positiveButton { dialog ->
+                        setNotificationFoodTime1(timeInMillis = tt)
                     }
                 }
             }
             tvFoodTime2.setOnClickListener {
                 MaterialDialog(view.context).show {
                     timePicker { _, time ->
-                        if (time.get(Calendar.MINUTE) < 10)
+                        if (time.get(Calendar.HOUR_OF_DAY) < 10 && time.get(Calendar.MINUTE) < 10)
+                            tvFoodTime2.text = resources.getString(
+                                R.string._0h0m,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.HOUR_OF_DAY) < 10)
+                            tvFoodTime2.text = resources.getString(
+                                R.string._0hm,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.MINUTE) < 10)
                             tvFoodTime2.text = resources.getString(
                                 R.string.h0m,
                                 time.get(Calendar.HOUR_OF_DAY),
@@ -323,13 +663,29 @@ class ScheduleFragment : Fragment() {
                                 time.get(Calendar.HOUR_OF_DAY),
                                 time.get(Calendar.MINUTE)
                             )
+                        tt = time.timeInMillis
+                    }
+                    positiveButton { dialog ->
+                        setNotificationFoodTime2(timeInMillis = tt)
                     }
                 }
             }
             tvFoodTime3.setOnClickListener {
                 MaterialDialog(view.context).show {
                     timePicker { _, time ->
-                        if (time.get(Calendar.MINUTE) < 10)
+                        if (time.get(Calendar.HOUR_OF_DAY) < 10 && time.get(Calendar.MINUTE) < 10)
+                            tvFoodTime3.text = resources.getString(
+                                R.string._0h0m,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.HOUR_OF_DAY) < 10)
+                            tvFoodTime3.text = resources.getString(
+                                R.string._0hm,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.MINUTE) < 10)
                             tvFoodTime3.text = resources.getString(
                                 R.string.h0m,
                                 time.get(Calendar.HOUR_OF_DAY),
@@ -341,13 +697,29 @@ class ScheduleFragment : Fragment() {
                                 time.get(Calendar.HOUR_OF_DAY),
                                 time.get(Calendar.MINUTE)
                             )
+                        tt = time.timeInMillis
+                    }
+                    positiveButton { dialog ->
+                        setNotificationFoodTime3(timeInMillis = tt)
                     }
                 }
             }
             tvFoodTime4.setOnClickListener {
                 MaterialDialog(view.context).show {
                     timePicker { _, time ->
-                        if (time.get(Calendar.MINUTE) < 10)
+                        if (time.get(Calendar.HOUR_OF_DAY) < 10 && time.get(Calendar.MINUTE) < 10)
+                            tvFoodTime4.text = resources.getString(
+                                R.string._0h0m,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.HOUR_OF_DAY) < 10)
+                            tvFoodTime4.text = resources.getString(
+                                R.string._0hm,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.MINUTE) < 10)
                             tvFoodTime4.text = resources.getString(
                                 R.string.h0m,
                                 time.get(Calendar.HOUR_OF_DAY),
@@ -359,13 +731,29 @@ class ScheduleFragment : Fragment() {
                                 time.get(Calendar.HOUR_OF_DAY),
                                 time.get(Calendar.MINUTE)
                             )
+                        tt = time.timeInMillis
+                    }
+                    positiveButton { dialog ->
+                        setNotificationFoodTime4(timeInMillis = tt)
                     }
                 }
             }
             tvFoodTime5.setOnClickListener {
                 MaterialDialog(view.context).show {
                     timePicker { _, time ->
-                        if (time.get(Calendar.MINUTE) < 10)
+                        if (time.get(Calendar.HOUR_OF_DAY) < 10 && time.get(Calendar.MINUTE) < 10)
+                            tvFoodTime5.text = resources.getString(
+                                R.string._0h0m,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.HOUR_OF_DAY) < 10)
+                            tvFoodTime5.text = resources.getString(
+                                R.string._0hm,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.MINUTE) < 10)
                             tvFoodTime5.text = resources.getString(
                                 R.string.h0m,
                                 time.get(Calendar.HOUR_OF_DAY),
@@ -377,6 +765,10 @@ class ScheduleFragment : Fragment() {
                                 time.get(Calendar.HOUR_OF_DAY),
                                 time.get(Calendar.MINUTE)
                             )
+                        tt = time.timeInMillis
+                    }
+                    positiveButton { dialog ->
+                        setNotificationFoodTime5(timeInMillis = tt)
                     }
                 }
             }
@@ -388,7 +780,19 @@ class ScheduleFragment : Fragment() {
             tvWeightTime.setOnClickListener {
                 MaterialDialog(view.context).show {
                     timePicker { _, time ->
-                        if (time.get(Calendar.MINUTE) < 10)
+                        if (time.get(Calendar.HOUR_OF_DAY) < 10 && time.get(Calendar.MINUTE) < 10)
+                            tvWeightTime.text = resources.getString(
+                                R.string._0h0m,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.HOUR_OF_DAY) < 10)
+                            tvWeightTime.text = resources.getString(
+                                R.string._0hm,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.MINUTE) < 10)
                             tvWeightTime.text = resources.getString(
                                 R.string.h0m,
                                 time.get(Calendar.HOUR_OF_DAY),
@@ -400,6 +804,10 @@ class ScheduleFragment : Fragment() {
                                 time.get(Calendar.HOUR_OF_DAY),
                                 time.get(Calendar.MINUTE)
                             )
+                        tt = time.timeInMillis
+                    }
+                    positiveButton { dialog ->
+                        setNotificationWeightTime(timeInMillis = tt)
                     }
                 }
             }
@@ -411,7 +819,19 @@ class ScheduleFragment : Fragment() {
             tvPressureTime1.setOnClickListener {
                 MaterialDialog(view.context).show {
                     timePicker { _, time ->
-                        if (time.get(Calendar.MINUTE) < 10)
+                        if (time.get(Calendar.HOUR_OF_DAY) < 10 && time.get(Calendar.MINUTE) < 10)
+                            tvPressureTime1.text = resources.getString(
+                                R.string._0h0m,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.HOUR_OF_DAY) < 10)
+                            tvPressureTime1.text = resources.getString(
+                                R.string._0hm,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.MINUTE) < 10)
                             tvPressureTime1.text = resources.getString(
                                 R.string.h0m,
                                 time.get(Calendar.HOUR_OF_DAY),
@@ -423,13 +843,29 @@ class ScheduleFragment : Fragment() {
                                 time.get(Calendar.HOUR_OF_DAY),
                                 time.get(Calendar.MINUTE)
                             )
+                        tt = time.timeInMillis
+                    }
+                    positiveButton { dialog ->
+                        setNotificationPressureTime1(timeInMillis = tt)
                     }
                 }
             }
             tvPressureTime2.setOnClickListener {
                 MaterialDialog(view.context).show {
                     timePicker { _, time ->
-                        if (time.get(Calendar.MINUTE) < 10)
+                        if (time.get(Calendar.HOUR_OF_DAY) < 10 && time.get(Calendar.MINUTE) < 10)
+                            tvPressureTime2.text = resources.getString(
+                                R.string._0h0m,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.HOUR_OF_DAY) < 10)
+                            tvPressureTime2.text = resources.getString(
+                                R.string._0hm,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.MINUTE) < 10)
                             tvPressureTime2.text = resources.getString(
                                 R.string.h0m,
                                 time.get(Calendar.HOUR_OF_DAY),
@@ -441,13 +877,29 @@ class ScheduleFragment : Fragment() {
                                 time.get(Calendar.HOUR_OF_DAY),
                                 time.get(Calendar.MINUTE)
                             )
+                        tt = time.timeInMillis
+                    }
+                    positiveButton { dialog ->
+                        setNotificationPressureTime2(timeInMillis = tt)
                     }
                 }
             }
             tvPressureTime3.setOnClickListener {
                 MaterialDialog(view.context).show {
                     timePicker { _, time ->
-                        if (time.get(Calendar.MINUTE) < 10)
+                        if (time.get(Calendar.HOUR_OF_DAY) < 10 && time.get(Calendar.MINUTE) < 10)
+                            tvPressureTime3.text = resources.getString(
+                                R.string._0h0m,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.HOUR_OF_DAY) < 10)
+                            tvPressureTime3.text = resources.getString(
+                                R.string._0hm,
+                                time.get(Calendar.HOUR_OF_DAY),
+                                time.get(Calendar.MINUTE)
+                            )
+                        else if (time.get(Calendar.MINUTE) < 10)
                             tvPressureTime3.text = resources.getString(
                                 R.string.h0m,
                                 time.get(Calendar.HOUR_OF_DAY),
@@ -459,6 +911,10 @@ class ScheduleFragment : Fragment() {
                                 time.get(Calendar.HOUR_OF_DAY),
                                 time.get(Calendar.MINUTE)
                             )
+                        tt = time.timeInMillis
+                    }
+                    positiveButton { dialog ->
+                        setNotificationPressureTime3(timeInMillis = tt)
                     }
                 }
             }

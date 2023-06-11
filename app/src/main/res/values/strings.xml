@@ -67,6 +67,8 @@
     <string name="_4">4</string>
     <string name="food_reminder">Напоминание: еда</string>
     <string name="h0m">%d:0%d</string>
+    <string name="_0hm">0%d:%d</string>
+    <string name="_0h0m">0%d:0%d</string>
     <string name="hm">%d:%d</string>
     <string name="breakfast">Завтрак</string>
     <string name="snack">Перекус</string>

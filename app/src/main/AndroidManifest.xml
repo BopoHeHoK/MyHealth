@@ -4,6 +4,7 @@
     package="com.test.myhealth">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
     <application
         android:name=".app.app.App"
@@ -26,6 +27,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".app.receiver.schedule.food.FoodTime1Receiver"
+            android:enabled="true"/>
+        <receiver android:name=".app.receiver.schedule.food.FoodTime2Receiver"
+            android:enabled="true"/>
+        <receiver android:name=".app.receiver.schedule.food.FoodTime3Receiver"
+            android:enabled="true"/>
+        <receiver android:name=".app.receiver.schedule.food.FoodTime4Receiver"
+            android:enabled="true"/>
+        <receiver android:name=".app.receiver.schedule.food.FoodTime5Receiver"
+            android:enabled="true"/>
+        <receiver android:name=".app.receiver.schedule.pressure.PressureTime1Receiver"
+            android:enabled="true"/>
+        <receiver android:name=".app.receiver.schedule.pressure.PressureTime2Receiver"
+            android:enabled="true"/>
+        <receiver android:name=".app.receiver.schedule.pressure.PressureTime3Receiver"
+            android:enabled="true"/>
+        <receiver android:name=".app.receiver.schedule.weight.WeightTimeReceiver"
+            android:enabled="true"/>
     </application>
 
 </manifest>

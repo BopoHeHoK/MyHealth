@@ -208,6 +208,7 @@ class ConverterBMImpl : ConverterBM {
         medicineInfoTimeBodyList.forEach {
             val converted = MedicineInfoTime(
                 id = it.id,
+                mode = it.mode,
                 time = it.time,
                 medicineInfoId = it.medicineInfoId,
             )

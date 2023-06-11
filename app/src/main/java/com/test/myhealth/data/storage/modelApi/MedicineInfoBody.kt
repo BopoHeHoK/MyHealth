@@ -8,6 +8,6 @@ data class MedicineInfoBody(
     val diseaseName: String?,
     val startDay: String?,
     val endDay: String?,
-    val medicineInfoTime: List<MedicineInfoTimeBody?>,
+    val medicineInfoTime: List<MedicineInfoTimeBody>,
     val medicineId: Long,
 )

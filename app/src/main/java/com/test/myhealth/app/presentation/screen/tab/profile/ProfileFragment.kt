@@ -42,11 +42,11 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        observeUser()
         toUserSetup(view)
         toBiometrics(view)
         toGetPremium(view)
         logout(view)
-        observeUser()
     }
 
     @SuppressLint("SetTextI18n")

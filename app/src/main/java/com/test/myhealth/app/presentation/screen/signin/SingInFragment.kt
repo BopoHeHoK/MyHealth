@@ -50,7 +50,7 @@ class SingInFragment : Fragment() {
     private fun toSignUp(view: View) {
         binding.tvToRegistration.setOnClickListener {
             Navigation.findNavController(view)
-                .navigate(R.id.action_singInFragment_to_singUpFragment)
+                .navigate(R.id.action_signInFragment_to_singUpFragment)
         }
     }
 

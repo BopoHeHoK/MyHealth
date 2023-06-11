@@ -182,6 +182,7 @@ class ConverterMEImpl : ConverterME {
     override fun toMedicineInfoTimeEntity(medicineInfoTime: MedicineInfoTime): MedicineInfoTimeEntity {
         return MedicineInfoTimeEntity(
             id = medicineInfoTime.id,
+            mode = medicineInfoTime.mode,
             time = medicineInfoTime.time,
             medicineInfoId = medicineInfoTime.medicineInfoId,
         )

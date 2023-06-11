@@ -147,7 +147,7 @@
         android:label="fragment_sing_in"
         tools:layout="@layout/fragment_sing_in" >
         <action
-            android:id="@+id/action_singInFragment_to_singUpFragment"
+            android:id="@+id/action_signInFragment_to_singUpFragment"
             app:destination="@id/singUpFragment" />
         <action
             android:id="@+id/action_singInFragment_to_splashFragment"
