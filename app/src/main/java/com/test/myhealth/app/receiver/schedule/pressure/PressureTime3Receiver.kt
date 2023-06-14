@@ -26,6 +26,6 @@ class PressureTime3Receiver : BroadcastReceiver() {
             .setContentIntent(pendingIntent)
 
         val notificationManagerCompat = NotificationManagerCompat.from(context)
-        notificationManagerCompat.notify(123, builder.build())
+        notificationManagerCompat.notify(112, builder.build())
     }
 }

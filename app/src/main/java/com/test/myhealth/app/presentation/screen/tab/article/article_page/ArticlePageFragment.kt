@@ -50,7 +50,7 @@ class ArticlePageFragment : Fragment() {
             articlePageViewModel.apply {
                 val article = observerArticle(getArticleId())
                 title.text = article.title
-                Glide.with(view.context).load("http://192.168.1.51:5000/${article.img}")
+                Glide.with(view.context).load("http://192.168.45.130:5000/${article.img}")
                     .into(illustration)
                 content.text = article.content
                 likes.text = article.likes.toString()

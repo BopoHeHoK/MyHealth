@@ -26,6 +26,6 @@ class WeightTimeReceiver : BroadcastReceiver() {
             .setContentIntent(pendingIntent)
 
         val notificationManagerCompat = NotificationManagerCompat.from(context)
-        notificationManagerCompat.notify(131, builder.build())
+        notificationManagerCompat.notify(113, builder.build())
     }
 }

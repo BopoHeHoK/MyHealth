@@ -26,6 +26,6 @@ class FoodTime3Receiver : BroadcastReceiver() {
             .setContentIntent(pendingIntent)
 
         val notificationManagerCompat = NotificationManagerCompat.from(context)
-        notificationManagerCompat.notify(113, builder.build())
+        notificationManagerCompat.notify(111, builder.build())
     }
 }

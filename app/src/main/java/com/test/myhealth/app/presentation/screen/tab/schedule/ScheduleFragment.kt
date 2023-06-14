@@ -118,10 +118,15 @@ class ScheduleFragment : Fragment() {
             intent,
             PendingIntent.FLAG_IMMUTABLE
         )
-        alarmManager.setInexactRepeating(
+//        alarmManager.setInexactRepeating(
+//            AlarmManager.RTC_WAKEUP,
+//            timeInMillis,
+//            AlarmManager.INTERVAL_DAY,
+//            pendingIntent
+//        )
+        alarmManager.setExact(
             AlarmManager.RTC_WAKEUP,
             timeInMillis,
-            AlarmManager.INTERVAL_DAY,
             pendingIntent
         )
     }
@@ -135,10 +140,15 @@ class ScheduleFragment : Fragment() {
             intent,
             PendingIntent.FLAG_IMMUTABLE
         )
-        alarmManager.setInexactRepeating(
+//        alarmManager.setInexactRepeating(
+//            AlarmManager.RTC_WAKEUP,
+//            timeInMillis,
+//            AlarmManager.INTERVAL_DAY,
+//            pendingIntent
+//        )
+        alarmManager.setExact(
             AlarmManager.RTC_WAKEUP,
             timeInMillis,
-            AlarmManager.INTERVAL_DAY,
             pendingIntent
         )
     }
@@ -152,10 +162,15 @@ class ScheduleFragment : Fragment() {
             intent,
             PendingIntent.FLAG_IMMUTABLE
         )
-        alarmManager.setInexactRepeating(
+//        alarmManager.setInexactRepeating(
+//            AlarmManager.RTC_WAKEUP,
+//            timeInMillis,
+//            AlarmManager.INTERVAL_DAY,
+//            pendingIntent
+//        )
+        alarmManager.setExact(
             AlarmManager.RTC_WAKEUP,
             timeInMillis,
-            AlarmManager.INTERVAL_DAY,
             pendingIntent
         )
     }
@@ -169,10 +184,15 @@ class ScheduleFragment : Fragment() {
             intent,
             PendingIntent.FLAG_IMMUTABLE
         )
-        alarmManager.setInexactRepeating(
+//        alarmManager.setInexactRepeating(
+//            AlarmManager.RTC_WAKEUP,
+//            timeInMillis,
+//            AlarmManager.INTERVAL_DAY,
+//            pendingIntent
+//        )
+        alarmManager.setExact(
             AlarmManager.RTC_WAKEUP,
             timeInMillis,
-            AlarmManager.INTERVAL_DAY,
             pendingIntent
         )
     }
@@ -186,10 +206,15 @@ class ScheduleFragment : Fragment() {
             intent,
             PendingIntent.FLAG_IMMUTABLE
         )
-        alarmManager.setInexactRepeating(
+//        alarmManager.setInexactRepeating(
+//            AlarmManager.RTC_WAKEUP,
+//            timeInMillis,
+//            AlarmManager.INTERVAL_DAY,
+//            pendingIntent
+//        )
+        alarmManager.setExact(
             AlarmManager.RTC_WAKEUP,
             timeInMillis,
-            AlarmManager.INTERVAL_DAY,
             pendingIntent
         )
     }
@@ -203,10 +228,15 @@ class ScheduleFragment : Fragment() {
             intent,
             PendingIntent.FLAG_IMMUTABLE
         )
-        alarmManager.setInexactRepeating(
+//        alarmManager.setInexactRepeating(
+//            AlarmManager.RTC_WAKEUP,
+//            timeInMillis,
+//            AlarmManager.INTERVAL_DAY,
+//            pendingIntent
+//        )
+        alarmManager.setExact(
             AlarmManager.RTC_WAKEUP,
             timeInMillis,
-            AlarmManager.INTERVAL_DAY,
             pendingIntent
         )
     }
@@ -220,10 +250,16 @@ class ScheduleFragment : Fragment() {
             intent,
             PendingIntent.FLAG_IMMUTABLE
         )
-        alarmManager.setInexactRepeating(
+//        alarmManager.setInexactRepeating(
+//            AlarmManager.RTC_WAKEUP,
+//            timeInMillis,
+//            AlarmManager.INTERVAL_DAY,
+//            pendingIntent
+//        )
+
+        alarmManager.setExact(
             AlarmManager.RTC_WAKEUP,
             timeInMillis,
-            AlarmManager.INTERVAL_DAY,
             pendingIntent
         )
     }
@@ -237,10 +273,15 @@ class ScheduleFragment : Fragment() {
             intent,
             PendingIntent.FLAG_IMMUTABLE
         )
-        alarmManager.setInexactRepeating(
+//        alarmManager.setInexactRepeating(
+//            AlarmManager.RTC_WAKEUP,
+//            timeInMillis,
+//            AlarmManager.INTERVAL_DAY,
+//            pendingIntent
+//        )
+        alarmManager.setExact(
             AlarmManager.RTC_WAKEUP,
             timeInMillis,
-            AlarmManager.INTERVAL_DAY,
             pendingIntent
         )
     }
@@ -254,10 +295,15 @@ class ScheduleFragment : Fragment() {
             intent,
             PendingIntent.FLAG_IMMUTABLE
         )
-        alarmManager.setInexactRepeating(
+//        alarmManager.setInexactRepeating(
+//            AlarmManager.RTC_WAKEUP,
+//            timeInMillis,
+//            AlarmManager.INTERVAL_DAY,
+//            pendingIntent
+//        )
+        alarmManager.setExact(
             AlarmManager.RTC_WAKEUP,
             timeInMillis,
-            AlarmManager.INTERVAL_DAY,
             pendingIntent
         )
     }
@@ -427,7 +473,7 @@ class ScheduleFragment : Fragment() {
                     swtFood.isChecked = true
                     foodTimeLayout.visibility = View.VISIBLE
                 }
-                tvFoodTime1.text = food.time1.substring(0, 5)
+                tvFoodTime1.text = food.time1
                 cbFoodTime1.isChecked = food.time1_mode
                 tvFoodTime2.text = food.time2.substring(0, 5)
                 cbFoodTime2.isChecked = food.time2_mode
@@ -496,11 +542,11 @@ class ScheduleFragment : Fragment() {
                     swtPressure.isChecked = true
                     pressureTimeLayout.visibility = View.VISIBLE
                 }
-                tvPressureTime1.text = pressure.time1.substring(0, 5)
+                tvPressureTime1.text = pressure.time1
                 cbPressureTime1.isChecked = pressure.time1_mode
-                tvPressureTime2.text = pressure.time2.substring(0, 5)
+                tvPressureTime2.text = pressure.time2
                 cbPressureTime2.isChecked = pressure.time2_mode
-                tvPressureTime3.text = pressure.time3.substring(0, 5)
+                tvPressureTime3.text = pressure.time3
                 cbPressureTime3.isChecked = pressure.time3_mode
             }
         }
@@ -1013,9 +1059,9 @@ class ScheduleFragment : Fragment() {
                     mode = swtPressure.isChecked,
                     time1 = tvPressureTime1.text.toString(),
                     time1_mode = cbPressureTime1.isChecked,
-                    time2 = tvPressureTime1.text.toString(),
+                    time2 = tvPressureTime2.text.toString(),
                     time2_mode = cbPressureTime2.isChecked,
-                    time3 = tvPressureTime1.text.toString(),
+                    time3 = tvPressureTime3.text.toString(),
                     time3_mode = cbPressureTime3.isChecked,
                     userId = getUserId(),
                 )

@@ -7,7 +7,7 @@ object RetrofitInstance {
 
     val api: MyHealthAPI by lazy {
         Retrofit.Builder()
-            .baseUrl("http://192.168.1.51:5000/api/")
+            .baseUrl("http://192.168.45.130:5000/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(MyHealthAPI::class.java)

@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
     <application
         android:name=".app.app.App"
         android:allowBackup="true"
@@ -28,23 +30,32 @@
             </intent-filter>
         </activity>
         <receiver android:name=".app.receiver.schedule.food.FoodTime1Receiver"
-            android:enabled="true"/>
+            android:enabled="true"
+            android:exported="true"/>
         <receiver android:name=".app.receiver.schedule.food.FoodTime2Receiver"
-            android:enabled="true"/>
+            android:enabled="true"
+            android:exported="true"/>
         <receiver android:name=".app.receiver.schedule.food.FoodTime3Receiver"
-            android:enabled="true"/>
+            android:enabled="true"
+            android:exported="true"/>
         <receiver android:name=".app.receiver.schedule.food.FoodTime4Receiver"
-            android:enabled="true"/>
+            android:enabled="true"
+            android:exported="true"/>
         <receiver android:name=".app.receiver.schedule.food.FoodTime5Receiver"
-            android:enabled="true"/>
+            android:enabled="true"
+            android:exported="true"/>
         <receiver android:name=".app.receiver.schedule.pressure.PressureTime1Receiver"
-            android:enabled="true"/>
+            android:enabled="true"
+            android:exported="true"/>
         <receiver android:name=".app.receiver.schedule.pressure.PressureTime2Receiver"
-            android:enabled="true"/>
+            android:enabled="true"
+            android:exported="true"/>
         <receiver android:name=".app.receiver.schedule.pressure.PressureTime3Receiver"
-            android:enabled="true"/>
+            android:enabled="true"
+            android:exported="true"/>
         <receiver android:name=".app.receiver.schedule.weight.WeightTimeReceiver"
-            android:enabled="true"/>
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>

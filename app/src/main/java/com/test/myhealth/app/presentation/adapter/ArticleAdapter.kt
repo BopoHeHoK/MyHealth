@@ -34,7 +34,7 @@ class ArticleAdapter(
     }
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
-        Glide.with(holder.itemView).load("http://192.168.1.51:5000/${articleList[position].img}")
+        Glide.with(holder.itemView).load("http://192.168.45.130:5000/${articleList[position].img}")
             .into(holder.binding.illustration)
         holder.binding.apply {
             title.text = articleList[position].title
